@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHUB</title>
+    <style media="screen">
+@font-face {
+    font-family: grotesk;
+    src: url(fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --clr-orange: #F2613F;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+
+body{
+    overflow-x: hidden;
+    color: white;
+    font-family: grotesk;
+    background-color: #111111;
+}
+
+.main-container{
+    margin-top: 40px;
+    margin-left: 70px;
+    height: 5300px;
+}
+
+h1{
+    font-weight: 500;
+    color: white;
+    font-size: 48px;
+}
+
+span{
+    color: var(--clr-orange);
+}
+
+li,a{
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navbar{
+    position: relative;
+    left: 250px;
+}
+.search{
+    position: relative;
+    left: 380px;
+    top: 10px;
+    color: #F2613F;
+    background-color: black;
+}
+#RecipeList {
+    background-color:black;
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 100px;
+    position: absolute;        
+    top: 80px;
+    right: 20px;
+    width: 500px;
+    min-height: auto;
+    max-height: 300px;
+    z-index : 999;
+    overflow-y: auto;   
+}
+#RecipeList::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+#RecipeList::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+#RecipeList::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+#RecipeList li{
+    margin: 0px;
+    padding: 0px;
+    color: #F2613F;
+    font-size: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+#RecipeList a{
+    font-size: 30px;
+}
+#img1{
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px; 
+     margin-bottom: 100px;
+    position: absolute;
+    left: 5px;
+    right: 50px;
+}
+a{
+    transition: all 0.3s ease 0s;
+}
+
+a:hover{
+    color: var(--clr-orange);
+}
+
+input{
+    font-size: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    color: var(--clr-orange);
+    background-color: #111111;
+    border: none;
+    border: white 2px solid;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 30px;
+}
+
+header img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 2375px;
+}
+
+.recipeTitle{
+    margin-top: 70px;
+    margin-left: 250px;
+    margin-bottom: 70px;
+}
+
+.recipeTitle h1{
+    font-size: 80px;
+}
+
+.recipeTitle p{
+    font-size: 32px;
+}
+
+.recipeImage{
+    position: relative;
+    left: 600px;
+    width: 1110px;
+    height: 624px;
+    border-radius: 20px;
+    background-image: url(images/randomFoodImages/Recipes/vegetable-quiche.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.recipeInfo{
+    position: relative;
+    left: 600px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 700px;
+}
+
+.recipeInfo h3{
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+.recipeInfo p{
+    font-size: 32px;
+    color: var(--clr-orange);
+}
+
+.ingredientsList{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ingredientsList h1{
+    position: relative;
+    left: 450px;
+    font-size: 55px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.ingredientsList p{
+    font-size: 32px;
+    width: 2400px;
+}
+
+.nutritionInfo{
+    width: 500px;
+    background-color: var(--clr-orange);
+    color: black;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 1150px;
+    left: 2000px;
+    margin-bottom: 30px;
+}
+
+.nutritionInfo h1{
+    color: black;
+    font-size: 55px;
+}
+
+.instructionsList h1{
+    position: relative;
+    left: 450px;
+    font-size: 55px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.instructionsList p{
+    font-size: 32px;
+    width: 2400px;
+}
+
+hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 2400px;
+}
+
+.note{
+    font-size: 32px;
+    width: 2400px;
+    margin-bottom: 50px;
+}
+
+.singleServing{
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.note1{
+    font-size: 32px;
+}
+
+.suggestionList{
+    position: relative;
+    margin-top: 50px;
+}
+
+.suggestionList h1{
+    margin-bottom: 30px;
+}
+
+.suggestionList p{
+    font-size: 52px;
+    width: 300px;
+}
+
+.hoverRecipe{
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+}
+
+#bananaBread{
+    background-image: url(images/randomFoodImages/Recipes/Banana-Bread.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -100px;
+    left: 500px;
+    visibility: hidden;
+}
+
+#chocolateChipCookies{
+    background-image: url(images/randomFoodImages/Recipes/chocolate-chip-cookies.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    visibility: hidden;
+}
+
+#BB:hover + #bananaBread{
+    visibility: visible;
+}
+
+#ccc:hover + #chocolateChipCookies{
+    visibility: visible;
+}
+
+.suggestionList hr{
+    width: 1000px;
+}
+</style>
+</head>
+<body>
+    <div class="main-container">
+
+        <header>
+            <h1>Recipe<span>HUB</span></h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Recipes</a></li>
+                    <li><a href="aboutUS.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search....." onkeyup="search()">
+            </div>
+            <br>
+    
+            <ul id="RecipeList" > 
+               <li class="li1"><img id="img1" src="images/randomFoodImages/Recipes/chocolate-chip-cookies.webp" alt=""> <a href="baking1.html" id="color">Chocolate Chip Cookies </a></li>
+                <li class="li1"> <a href="baking2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Banana-Bread.webp" alt=""> Banana Bread </a></li>
+                <li class="li1">  <a href="baking3.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Savory Seafood Dish Presentation.jpeg"  alt="">Vegetable Quiche </a> </li>
+                <li class="li1">  <a href="burger1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gourmet Burgers with Artistic Presentation.jpeg" alt=""> Grilled BBQ Chicken Burgers</a> </li>
+                <li class="li1">  <a href="burger2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mushroom-Swiss-Burger-9.webp" alt="">Mushroom Swiss Burger </a> </li>
+                <li class="li1">  <a href="burger3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/lamb-burger-recipe.jpg" alt="">Greek Lamb Burger	
+                </a> </li>
+                <li class="li1">  <a href="chicken1.html" id="color"><img id="img1" src="images/randomFoodImages/categoriesPage/Glazed Honey Soy Chicken Drumsticks with Sesame and Herbs.jpeg" alt=""> Baked Honey Glazed Chicken			
+    </a> </li>
+                <li class="li1">  <a href="chicken2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Garlic-Butter-Chicken-Thighs.webp" alt="">Baked Chicken Thighs		
+                </a> </li>
+                <li class="li1">  <a href="chicken3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-and-Vegetable-Stir-Fry.jpg" alt="">Chicken Stir Fry	
+        
+                </a> </li>
+                <li class="li1">  <a href="chinese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Kung-Pao-Chicken-SQ.jpg" alt="">Kung Pao Chicken	
+                </a> </li>
+                <li class="li1">  <axl href="chinese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/mapo-tofu.jpg" alt=""> Mapo Tofu	
+                </a></li>
+                <li class="li1">  <a href="chinese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/jiaozi-chinese-dumplings-.jpg" alt="">Dumplings (Jiaozi)		
+                </a> </li>
+                <li class="li1"> <a href="curryRice1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Coconut-Rice-Curry.webp" alt="">Coconut Curry Rice		
+                </a> </li>
+                <li class="li1">  <a href="curryRice2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/indianCurryRice.jpg" alt="">Indian Curry Rice		
+                </a > </li>
+                <li class="li1">  <a href="curryRice3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/ChickenCurryRiceStock.jpeg" alt="">Chicken Stock Curry Rice		
+                </a></li>
+                <li class="li1">  <a href="dessert1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chocolate-Mug-Cake-1.jpg" alt="">Chocolate Mug Cake		
+                </a> </li>
+                <li class="li1"> <a href="dessert2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/brownie-bites-15-of-15.jpg" alt="">Brownie Bites	
+                </a></li>
+                <li class="li1">  <a href="dessert3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Lemon-bars-1x1-2.jpg" alt="">Lemon Bars	
+                </a> </li>
+                <li class="li1">  <a href="grilling1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/greekChickenSkewers.jpg" alt="">Greek Grilled Chicken Skewers			
+                </a> </li>
+                <li class="li1"> <a href="grilling2.html" id="color" ><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Vegetable-Platter.jpg" alt="">Grilled Vegetable Platter		
+                </a> </li>
+                <li class="li1">  <a href="grilling3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Lamb-Chops.jpg" alt="">Grilled Lamb Chops
+                </a> </li>
+                <li class="li1">  <a href="holidays1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gingerbread-Cookies-1-of-1.jpg" alt="">Gingerbread Cookies		
+                </a> </li>
+                <li class="li1">  <a href="holidays2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/potatoLatkes.webp" alt="">Potato Latkes	
+                </a></li>
+                <li class="li1">  <a href="holidays3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/figgy-pudding-3sq.jpg" alt="">Figgy Pudding	
+                </a> </li>
+                <li class="li1"> <a href="indian1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-Biryani-Recipe.jpg" alt="">Chicken Biryani	
+                </a> </li>
+                <li class="li1">  <a href="indian2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/butter-chicken-.jpg" alt="">Butter Chicken	
+                </a> </li>
+                <li class="li1">  <a href="indian3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Palak-Paneer-500x500.jpg" alt=""> Palak Paneer	
+                </a></li>
+                <li class="li1">  <a href="japanese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/red-dragon-roll.jpg" alt="">Dragon Roll	
+                </a> </li>
+                <li class="li1">  <a href="japanese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/best-tiramisu-recipe-SQUARE.webp" alt=""> Tiramisu	
+                </a> </li>
+                <li class="li1"> <a href="lazy1.htmla" id="color"><img id="img1" src="images/randomFoodImages/Recipes/honeybutterchicken-insta.jpg" alt=""> Honey Butter Chicken		
+                </a></li>
+                <li class="li1">  <a href="lazy2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pasta-and-peas-featured.jpg" alt=""> Pasta With Peas	
+                </a> </li>
+                <li class="li1">  <a href="lazy3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Broccoli-Cheddar-Soup-Recipe-1-of-1-2.jpg" alt=""> Broccoli Cheddar Soup		
+                </a> </li>
+                <li class="li1"> <a href="japanese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Japanese-Chicken-Curry1.jpg" alt=""> Japanese Chicken Curry Rice			
+                </a> </li>
+                <li class="li1">  <a href="mexican1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/chicken-tacos-square.jpg" alt="">Chicken Tacos	
+                </a> </li>
+                <li class="li1">  <a href="mexican2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Flavorful-Chicken-Fajitas_EXPS_CIW19_12540_B08_30_6b-e1722260583441.jpg" alt="">Chicken Fajitas	
+                </a> </li>
+                <li class="li1">  <a href="mexican3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mexican_Chicken_and_Bean_Burrito_Recipe-4.jpg" alt="">Chicken Burrito	
+                </a></li>
+                <li class="li1">  <a href="pasta1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pesto-pasta-1.jpg" alt=""> Pesto Pasta	
+                </a> </li>
+                <li class="li1"> <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/garlic-parmesan-pasta-10.jpg" alt="">Garlic Parmesan Pasta		
+                </a> </li>
+                <li class="li1">  <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Aglio-olio-1-1.jpg" alt=""> Spaghetti Aglio e Olio		
+                </a> </li>
+                <li class="li1"> <a href="pastry1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Apple-Turnovers-6.jpg" alt="">Apple Turnovers	
+                </a></li>
+                <li class="li1" >  <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mini-Fruit-Tarts-Feature.jpg" alt="">Fruit Tart Pastry	
+                </a> </li>
+                <li class="li1"> <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/raspberry-danish-featured.jpg" alt="">Raspberry Danish Pastry		
+                </a></li>
+                <li class="li1">  <a href="pizza1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Pizza With Cherry Tomatoes.jpg" alt="">Pizza With Cherry Tomatoes			
+                </a> </li>
+                <li class="li1">  <a href="pizza2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Taco-Pizza.jpg" alt="">Taco Pizza	
+                </a> </li>
+                <li class="li1">  <a href="pizza3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Red-Pepper-Pizza.jpg" alt="">Red Pepper Pizza with Feta	
+                </a> </li>
+                <li class="li1"> <a href="salad1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caesar-Salad.jpg" alt=""> Caesar Salad	
+                </a> </li>
+                <li class="li1">  <a href="salad2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caprese-Salad.jpg" alt="">Caprese Salad	
+                </a> </li>
+                <li class="li1">  <a href="salad3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/as20-med-mediterranean-zucchini-and-chickpea-salad.webp" alt=""> Mediterranean Zucchini and Chickpea Salad				
+                </a> </li>
+                <li class="li1">  <a href="sandwich1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/grilled-cheese.jpg" alt=""> Grilled Cheese Sandwich
+                      </a></li>
+                <li class="li1">  <a href="sandwich2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Egg salad sandwich.jpeg" alt="">Egg Salad Sandwich	 
+                </a> </li>
+                <li class="li1"> <a href="sandwich3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Veggie And Hummus Sandwich.jpg" alt="">Veggie And Hummus Sandwich		
+                </a></li>
+                <li class="li1"> <a href="seafood1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Baked-Salmon-1.jpg" alt="">Baked Salmon		
+                </a></li>
+    
+                <li class="li1">  <a href="seafood2.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Spicy-Tuna-Poke-Bowl.webp" alt="">Spicy Tuna Poke Bowl		
+                </a> </li>
+                <li class="li1"> <a href="seafood3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/My-Best-Clam-Chowder.webp" alt="">Clam Chowder	
+                </a> </li>
+                <li class="li1">  <a href="smoothie1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/strawberrySmoothie.webp" alt="">Strawberry Smoothie		
+                </a> </li>
+                <li class="li1">  <a href="smoothie2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mango-Pineapple-Smoothie.webp" alt="">Mango Pineapple Smoothie		
+                </a> </li>
+                <li class="li1">  <a href="smoothie3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Green Detox Smoothie.jpg" alt="">Green Detox Smoothie	
+                </a></li>
+                <li class="li1">  <a href="soup1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/carrot-ginger-soup.jpg" alt=""> Carrot Ginger Soup		
+                </a> </li>
+                <li class="li1"> <a href="soup2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamyPotatoLeekSoup.webp" alt="">Creamy Potato and Leek Soup		
+                </a></li>
+                <li class="li1">  <a href="soup3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/tomatobasilsoup.jpg" alt=""> Tomato Basil Soup	
+                </a> </li>
+                <li class="li1">  <a href="vegan1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamy-vegan-chickpea-salad-1.jpg" alt=""> Vegan Chickpea Salad		
+                </a> </li>
+                <li class="li1"> <a href="vegan2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Vegan-Avocado-Chocolate-Mousse.jpg" alt=""> Vegan Chocolate Mousse		
+                </a> </li>
+                <li class="li1">  <a href="vegan3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/veganLentilSoup.jpg" alt=""> Vegan Lentil Soup	
+                </a> </li>
+            </ul>
+    
+        </header>
+
+        <div class="recipeTitle">
+            <h1>Vegetable Quiche</h1>
+            <p>Recipe by <a href="#">eat picks</a></p>
+        </div>
+
+        <div class="recipeImage"></div>
+
+        <div class="recipeInfo">
+            <div>
+                <h3>Prep Time</h3>
+                <p>5 mins</p>
+            </div>
+
+            <div>
+                <h3>Cook Time</h3>
+                <p>45 mins</p>
+            </div>
+
+            <div>
+            <h3>Servings</h3>
+            <p>6</p>
+            </div>
+            
+        </div>
+
+        <div class="ingredientsList">
+            <h1>Ingredients</h1>
+            <p><span>Unbaked pie shell (9-inch)</span> 1</p>
+            <p><span>Medium onion (chopped)</span> 1</p>
+            <p><span>Chopped broccoli (optional)</span> 1 cup</p>
+            <p><span>Chopped asparagus (optional)</span> 1 cup</p>
+            <p><span>Fresh mushrooms (optional)</span> 1 cup</p>
+            <p><span>Butter</span> 1/2 stick (4 tablespoons)</p>
+            <p><span>Grated parmesan cheese</span> 1/4 cup</p>
+            <p><span>Grated swiss cheese</span> 3/4 cup</p>
+            <p><span>Eggs</span> 3</p>
+            <p><span>Half and half</span> 1 1/2 cups</p>
+            <p><span>Garlic salt</span> 1 teaspoon</p>
+            <p><span>Thyme</span> 1 teaspoon</p>
+        </div>
+
+        <div class="nutritionInfo">
+            <h1>Nutrition</h1>
+            <div>Calories: 160</div>
+            <div>Total Fat: 10g</div>
+            <div>Saturated Fat: 6g</div>
+            <div>Trans Fat: 0g</div>
+            <div>Unsaturated Fat: 4g</div>
+            <div>Cholesterol: 70mg</div>
+            <div>Sodium: 255mg</div>
+            <div>Carbohydrates: 12g</div>
+            <div>Fiber: 1g</div>
+            <div>Sugar: 4g</div>
+            <div>Protein: 7g</div>                       
+        </div>
+
+        <div class="instructionsList">
+            <h1>Instructions</h1>
+            <p>1. Preheat oven to 350 degrees.</p>
+            <p>2. Place unbaked pie shell in a square 8x8 baking dish or in 9-inch pie plate. Set aside.</p>
+            <p>3. Melt butter in frying pan and sauté onions and mushrooms (optional) or any vegetable you decide to add and cook until soft.  Add to the bottom of pie shell.</p>
+            <p>4. Sprinkle cheeses on top.</p>
+            <p>5. In a bowl, beat eggs; add half and half, add garlic salt & thyme and whisk well.</p>
+            <p>6. Pour egg mixture into pie shell and bake in preheated oven for 40-45 minutes.</p>
+            <p>7. Serve warm or cold. A nice green side salad goes great for brunch, lunch or dinner.</p>
+        </div>
+
+        <hr>
+
+        <div class="note">
+            <p>Our goal is to offer the best recipes while minimizing waste. To avoid food waste if you don’t enjoy a recipe, we provide single-serving ingredient lists. Here’s the list:</p>
+        </div>
+
+        <div class="singleServing">
+            <p><span>Unbaked pie shell (9-inch)</span> 1/6 of the pie</p>
+            <p><span>Medium onion (chopped)</span> about 1/6 of a medium onion</p>
+            <p><span>Chopped broccoli (optional)</span> about 2 tablespoons</p>
+            <p><span>Chopped asparagus (optional)</span> about 2 tablespoons</p>
+            <p><span>Fresh mushrooms (optional)</span> about 2 tablespoons</p>
+            <p><span>Butter</span> 2/3 tablespoon (2 teaspoons)</p>
+            <p><span>Grated parmesan cheese</span> about 1 tablespoon</p>
+            <p><span>Grated swiss cheese</span> about 3 tablespoons</p>
+            <p><span>Eggs</span> about 1/2 egg (beaten)</p>
+            <p><span>Half and half</span> about 1/4 cup</p>
+            <p><span>Garlic salt</span> a pinch</p>
+            <p><span>Thyme</span> a pinch</p>
+        </div>
+
+        <div class="note1">
+            The ingredients list provided above is from us and not by the original author of the recipe.
+        </div>
+
+        <div class="suggestionList">
+            <h1>You might also like....</h1>
+            <p id="BB"><a href="baking2.html">Banana Bread</a></p>
+            <div class="hoverRecipe" id="bananaBread"></div>
+            <hr>
+            <p id="ccc"><a href="baking1.html">Chocolate Chip Cookies</a></p>
+            <div class="hoverRecipe" id="chocolateChipCookies"></div>
+            <hr>
+        </div>
+        <script src="functioning.JS"></script>
+    </div>
+</body>
+</html>

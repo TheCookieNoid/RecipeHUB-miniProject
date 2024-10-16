@@ -1,0 +1,618 @@
+@font-face {
+    font-family: grotesk;
+    src: url(fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --clr-orange: #F2613F;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+
+body{
+    overflow-x: hidden;
+    color: white;
+    font-family: grotesk;
+    background-color: black;
+}
+
+.main-container{
+    margin-top: 40px;
+    margin-left: 70px;
+    height: 1500px;
+}
+
+h1{
+    font-weight: 500;
+    color: white;
+    font-size: 48px;
+}
+
+span{
+    color: var(--clr-orange);
+}
+
+li,a{
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+#googleMenu{
+    position: relative;
+    top: 5px;
+}
+
+header{
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navbar{
+    position: relative;
+    left: 150px;
+}
+.search{
+    position: relative;
+    left: 170px;
+    color: #F2613F;
+    background-color: black;
+}
+#RecipeList {
+    background-color:black;
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 100px;
+    position: absolute;        
+    top: 80px;
+    right: 20px;
+    width: 500px;
+    min-height: auto;
+    max-height: 300px;
+    z-index : 999;
+    overflow-y: auto;   
+}
+#RecipeList::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+#RecipeList::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+#RecipeList::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+#RecipeList li{
+    margin: 0px;
+    padding: 0px;
+    color: #F2613F;
+    font-size: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+#RecipeList a{
+    font-size: 30px;
+}
+#img1{
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px; 
+     margin-bottom: 100px;
+    position: absolute;
+    left: 5px;
+    right: 50px;
+}
+a{
+    transition: all 0.3s ease 0s;
+}
+
+a:hover{
+    color: var(--clr-orange);
+}
+
+input{
+    font-size: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    color: var(--clr-orange);
+    background-color: #111111;
+    border: none;
+    border: white 2px solid;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 30px;
+}
+
+header img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 1750px;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    position: relative;
+    left: -30px;
+}
+
+.flex-container a{
+    font-size: 48px;
+}
+
+.categoriesBento-container{
+    background-color: black;
+    width: 1920px;
+    height: 1024px;
+    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+
+.row-top{
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.row-top .col{
+    flex: 1;
+    border-radius: 10px;
+}
+
+.row-bottom{
+    flex: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.row-bottom .col-five{
+    flex: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.col-five .row{
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.col-five .col{
+    flex: 1;
+    border-radius: 10px;
+}
+
+.row-bottom .col-six{
+    flex: 1;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.col-nine{
+    flex: 1;
+    border-radius: 10px;
+}
+
+.col-ten{
+    flex: 2;
+    border-radius: 10px;
+}
+
+.categoriesBento-container p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    visibility: hidden;
+    background-color: #11111196;
+    text-decoration: underline;
+}
+
+#curryRice{
+    background-image: url(images/randomFoodImages/categoriesPage/Elegant\ Indian\ Feast\ Showcase.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#curryRice:hover{
+    cursor: pointer;
+}
+
+#curryRice:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+
+#curryRice:hover .hiddenText{
+    visibility: visible;
+}
+
+#grilling{
+    background-image: url(images/randomFoodImages/categoriesPage/Grilled\ Delights\ Over\ Open\ Flames.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#grilling:hover{
+    cursor: pointer;
+}
+
+#grilling:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#grilling:hover .hiddenText{
+    visibility: visible;
+}
+
+#holidays{
+    background-image: url(images/randomFoodImages/categoriesPage/categoriesHolidays.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#holidays:hover{
+    cursor: pointer;
+}
+
+#holidays:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#holidays:hover .hiddenText{
+    visibility: visible;
+}
+
+#smoothy{
+    background-image: url(images/randomFoodImages/categoriesPage/categoriesSmoothy.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#smoothy:hover{
+    cursor: pointer;
+}
+
+#smoothy:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#smoothy:hover .hiddenText{
+    visibility: visible;
+}
+
+
+#baking{
+    background-image: url(images/randomFoodImages/categoriesPage/categoriesBaking.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#baking:hover{
+    cursor: pointer;
+}
+
+#baking:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#baking:hover .hiddenText{
+    visibility: visible;
+}
+
+#vegan{
+    background-image: url(images/randomFoodImages/categoriesPage/Vibrant\ Carrot\ Ribbon\ Salad\ with\ Chilies\,\ Herbs\,\ and\ Sesame\ Seeds.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#vegan:hover{
+    cursor: pointer;
+}
+
+#vegan:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#vegan:hover .hiddenText{
+    visibility: visible;
+}
+
+#chicken{
+    background-image: url(images/randomFoodImages/categoriesPage/Glazed\ Honey\ Soy\ Chicken\ Drumsticks\ with\ Sesame\ and\ Herbs.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#chicken:hover{
+    cursor: pointer;
+}
+
+#chicken:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#chicken:hover .hiddenText{
+    visibility: visible;
+}
+
+#seafood{
+    background-image: url(images/randomFoodImages/categoriesPage/Gourmet\ Seafood\ Meal\ Presentation.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#seafood:hover{
+    cursor: pointer;
+}
+
+#seafood:active{
+    color: var(--clr-orange);
+    transition: all 0.3s ease;
+}
+
+#seafood:hover .hiddenText{
+    visibility: visible;
+}
+
+#CATEGORIES{
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.specific-container{
+    margin-top: 100px;
+    padding: 35px;
+    height: 1600px;
+    width: 1920px;
+    background-image: url(images/randomFoodImages/categoriesPage/fadeCategoriesPage.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    left: -60px;
+}
+
+.specific-container h1{
+    font-size: 64px;
+    text-align: center;
+}
+
+.specific-container h3{
+    font-size: 40px;
+    text-align: center;
+}
+
+.specific-container a{
+    font-size: 48px;
+}
+
+#pizza{
+    background-image: url(images/randomFoodImages/categoriesPage/Fresh\ Gourmet\ Pizza\ on\ Marble\ Surface.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#soup{
+    background-image: url(images/randomFoodImages/categoriesPage/Creamy\ Herb-Garnished\ Soup\ in\ Rustic\ Pot.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#salad{
+    background-image: url(images/randomFoodImages/categoriesPage/Rainbow\ Avocado\ Veggie\ Salad.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#dessert{
+    background-image: url(images/randomFoodImages/categoriesPage/Elegant\ Panna\ Cotta\ Dessert\ Presentation.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#pasta{
+    background-image: url(images/randomFoodImages/categoriesPage/Creamy\ Herb-Garnished\ Pasta\ Close-Up.jpeg);
+    background-position: center;
+    background-size: cover;
+ 
+}
+
+#pastry{
+    background-image: url(images/randomFoodImages/categoriesPage/Delectable\ Layered\ Cake\ on\ Wooden\ Tray.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#burger{
+    background-image: url(images/randomFoodImages/categoriesPage/Gourmet\ Cheeseburger\ Close-up.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#sandwich{
+    background-image: url(images/randomFoodImages/categoriesPage/Delectable\ Toasted\ Breakfast\ Sandwich.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#japanese{
+    background-image: url(images/randomFoodImages/categoriesPage/Artful\ Sushi\ Platter.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#indian{
+    background-image: url(images/randomFoodImages/categoriesPage/Festive\ Indian\ Tandoori\ Feast.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#chinese{
+    background-image: url(images/randomFoodImages/categoriesPage/Caramelized\ Chicken\ Dish\ Close-Up.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#mexican{
+    background-image: url(images/randomFoodImages/categoriesPage/Appetizing\ Mexican\ Grilled\ Meat\ Tacos.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.circleRecipes{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.circleRecipes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent */
+    transition: background-color 0.3s ease;
+    z-index: 1; 
+}
+
+.circleRecipes:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  }
+
+.circleRecipes p{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 600;
+    visibility: hidden;
+    text-decoration: underline;
+    z-index: 2;
+}
+
+.circleRecipes:hover{
+    cursor: pointer;
+}
+
+.circleRecipes:hover p{
+    visibility: visible;
+}
+
+.grid-container{
+    position: relative;
+    top: 100px;
+    height: 1250px;
+    width: 1830px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,430px);
+    gap: 20px;
+    justify-content: center;
+}
+
+.lazy-container{
+    width: 1920px;
+    height: 850px;
+    background-image: url(images/randomFoodImages/categoriesPage/blurredImage.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 180px;
+    left: -35px;
+}
+
+.lazyDish-image{
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background-image: url(images/randomFoodImages/categoriesPage/Chicken\ Curry\ and\ Rice\ Dish.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    left: 750px;
+    top: 50px;
+    z-index: 2;
+}
+
+.specific-container a{
+    font-size: 40px;
+}
+
+.lazy-container p{
+    position: relative;
+    top: 70px;
+    left: 775px;
+    font-size: 40px;
+}
+
+@media (max-width:1440px){
+    
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHUB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+
+        <header>
+        <h1>Recipe<span id="HUB">HUB</span></h1>
+        <nav class="navbar">
+            <!--
+            <ul class="sideBar">
+                
+                <li onclick = hideSidebar()><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Recipes</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            -->
+            <ul>
+                <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="categories.html">Recipes</a></li>
+                <li class="hideOnMobile"><a href="aboutUS.html">About</a></li>
+                <!--
+                <li onclick=showSiderbar()><a id="googleMenu" href=""><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                -->
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search....." onkeyup="search()">
+        </div>
+        <br>
+
+        <ul id="RecipeList" > 
+           <li class="li1"><img id="img1" src="images/randomFoodImages/Recipes/chocolate-chip-cookies.webp" alt=""> <a href="baking1.html" id="color">Chocolate Chip Cookies </a></li>
+            <li class="li1"> <a href="baking2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Banana-Bread.webp" alt=""> Banana Bread </a></li>
+            <li class="li1">  <a href="baking3.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Savory Seafood Dish Presentation.jpeg"  alt="">Vegetable Quiche </a> </li>
+            <li class="li1">  <a href="burger1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gourmet Burgers with Artistic Presentation.jpeg" alt=""> Grilled BBQ Chicken Burgers</a> </li>
+            <li class="li1">  <a href="burger2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mushroom-Swiss-Burger-9.webp" alt="">Mushroom Swiss Burger </a> </li>
+            <li class="li1">  <a href="burger3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/lamb-burger-recipe.jpg" alt="">Greek Lamb Burger	
+            </a> </li>
+            <li class="li1">  <a href="chicken1.html" id="color"><img id="img1" src="images/randomFoodImages/categoriesPage/Glazed Honey Soy Chicken Drumsticks with Sesame and Herbs.jpeg" alt=""> Baked Honey Glazed Chicken</a> </li>
+            <li class="li1">  <a href="chicken2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Garlic-Butter-Chicken-Thighs.webp" alt="">Baked Chicken Thighs		
+            </a> </li>
+            <li class="li1">  <a href="chicken3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-and-Vegetable-Stir-Fry.jpg" alt="">Chicken Stir Fry	
+	
+            </a> </li>
+            <li class="li1">  <a href="chinese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Kung-Pao-Chicken-SQ.jpg" alt="">Kung Pao Chicken	
+            </a> </li>
+            <li class="li1">  <a href="chinese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/mapo-tofu.jpg" alt=""> Mapo Tofu	
+            </a></li>
+            <li class="li1">  <a href="chinese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/jiaozi-chinese-dumplings-.jpg" alt="">Dumplings (Jiaozi)		
+            </a> </li>
+            <li class="li1"> <a href="curryRice1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Coconut-Rice-Curry.webp" alt="">Coconut Curry Rice		
+            </a> </li>
+            <li class="li1">  <a href="curryRice2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/indianCurryRice.jpg" alt="">Indian Curry Rice		
+            </a > </li>
+            <li class="li1">  <a href="curryRice3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/ChickenCurryRiceStock.jpeg" alt="">Chicken Stock Curry Rice		
+            </a></li>
+            <li class="li1">  <a href="dessert1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chocolate-Mug-Cake-1.jpg" alt="">Chocolate Mug Cake		
+            </a> </li>
+            <li class="li1"> <a href="dessert2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/brownie-bites-15-of-15.jpg" alt="">Brownie Bites	
+            </a></li>
+            <li class="li1">  <a href="dessert3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Lemon-bars-1x1-2.jpg" alt="">Lemon Bars	
+            </a> </li>
+            <li class="li1">  <a href="grilling1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/greekChickenSkewers.jpg" alt="">Greek Grilled Chicken Skewers			
+            </a> </li>
+            <li class="li1"> <a href="grilling2.html" id="color" ><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Vegetable-Platter.jpg" alt="">Grilled Vegetable Platter		
+            </a> </li>
+            <li class="li1">  <a href="grilling3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Lamb-Chops.jpg" alt="">Grilled Lamb Chops
+            </a> </li>
+            <li class="li1">  <a href="holidays1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gingerbread-Cookies-1-of-1.jpg" alt="">Gingerbread Cookies		
+            </a> </li>
+            <li class="li1">  <a href="holidays2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/potatoLatkes.webp" alt="">Potato Latkes	
+            </a></li>
+            <li class="li1">  <a href="holidays3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/figgy-pudding-3sq.jpg" alt="">Figgy Pudding	
+            </a> </li>
+            <li class="li1"> <a href="indian1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-Biryani-Recipe.jpg" alt="">Chicken Biryani	
+            </a> </li>
+            <li class="li1">  <a href="indian2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/butter-chicken-.jpg" alt="">Butter Chicken	
+            </a> </li>
+            <li class="li1">  <a href="indian3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Palak-Paneer-500x500.jpg" alt=""> Palak Paneer	
+            </a></li>
+            <li class="li1">  <a href="japanese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/red-dragon-roll.jpg" alt="">Dragon Roll	
+            </a> </li>
+            <li class="li1">  <a href="japanese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/best-tiramisu-recipe-SQUARE.webp" alt=""> Tiramisu	
+            </a> </li>
+            <li class="li1"> <a href="lazy1.htmla" id="color"><img id="img1" src="images/randomFoodImages/Recipes/honeybutterchicken-insta.jpg" alt=""> Honey Butter Chicken		
+            </a></li>
+            <li class="li1">  <a href="lazy2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pasta-and-peas-featured.jpg" alt=""> Pasta With Peas	
+            </a> </li>
+            <li class="li1">  <a href="lazy3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Broccoli-Cheddar-Soup-Recipe-1-of-1-2.jpg" alt=""> Broccoli Cheddar Soup		
+            </a> </li>
+            <li class="li1"> <a href="japanese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Japanese-Chicken-Curry1.jpg" alt=""> Japanese Chicken Curry Rice			
+            </a> </li>
+            <li class="li1">  <a href="mexican1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/chicken-tacos-square.jpg" alt="">Chicken Tacos	
+            </a> </li>
+            <li class="li1">  <a href="mexican2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Flavorful-Chicken-Fajitas_EXPS_CIW19_12540_B08_30_6b-e1722260583441.jpg" alt="">Chicken Fajitas	
+            </a> </li>
+            <li class="li1">  <a href="mexican3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mexican_Chicken_and_Bean_Burrito_Recipe-4.jpg" alt="">Chicken Burrito	
+            </a></li>
+            <li class="li1">  <a href="pasta1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pesto-pasta-1.jpg" alt=""> Pesto Pasta	
+            </a> </li>
+            <li class="li1"> <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/garlic-parmesan-pasta-10.jpg" alt="">Garlic Parmesan Pasta		
+            </a> </li>
+            <li class="li1">  <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Aglio-olio-1-1.jpg" alt=""> Spaghetti Aglio e Olio		
+            </a> </li>
+            <li class="li1"> <a href="pastry1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Apple-Turnovers-6.jpg" alt="">Apple Turnovers	
+            </a></li>
+            <li class="li1" >  <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mini-Fruit-Tarts-Feature.jpg" alt="">Fruit Tart Pastry	
+            </a> </li>
+            <li class="li1"> <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/raspberry-danish-featured.jpg" alt="">Raspberry Danish Pastry		
+            </a></li>
+            <li class="li1">  <a href="pizza1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Pizza With Cherry Tomatoes.jpg" alt="">Pizza With Cherry Tomatoes			
+            </a> </li>
+            <li class="li1">  <a href="pizza2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Taco-Pizza.jpg" alt="">Taco Pizza	
+            </a> </li>
+            <li class="li1">  <a href="pizza3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Red-Pepper-Pizza.jpg" alt="">Red Pepper Pizza with Feta	
+            </a> </li>
+            <li class="li1"> <a href="salad1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caesar-Salad.jpg" alt=""> Caesar Salad	
+            </a> </li>
+            <li class="li1">  <a href="salad2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caprese-Salad.jpg" alt="">Caprese Salad	
+            </a> </li>
+            <li class="li1">  <a href="salad3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/as20-med-mediterranean-zucchini-and-chickpea-salad.webp" alt=""> Mediterranean Zucchini and Chickpea Salad				
+            </a> </li>
+            <li class="li1">  <a href="sandwich1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/grilled-cheese.jpg" alt=""> Grilled Cheese Sandwich
+        	      </a></li>
+            <li class="li1">  <a href="sandwich2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Egg salad sandwich.jpeg" alt="">Egg Salad Sandwich	 
+            </a> </li>
+            <li class="li1"> <a href="sandwich3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Veggie And Hummus Sandwich.jpg" alt="">Veggie And Hummus Sandwich		
+            </a></li>
+            <li class="li1"> <a href="seafood1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Baked-Salmon-1.jpg" alt="">Baked Salmon		
+            </a></li>
+
+            <li class="li1">  <a href="seafood2.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Spicy-Tuna-Poke-Bowl.webp" alt="">Spicy Tuna Poke Bowl		
+            </a> </li>
+            <li class="li1"> <a href="seafood3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/My-Best-Clam-Chowder.webp" alt="">Clam Chowder	
+            </a> </li>
+            <li class="li1">  <a href="smoothie1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/strawberrySmoothie.webp" alt="">Strawberry Smoothie		
+            </a> </li>
+            <li class="li1">  <a href="smoothie2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mango-Pineapple-Smoothie.webp" alt="">Mango Pineapple Smoothie		
+            </a> </li>
+            <li class="li1">  <a href="smoothie3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Green Detox Smoothie.jpg" alt="">Green Detox Smoothie	
+            </a></li>
+            <li class="li1">  <a href="soup1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/carrot-ginger-soup.jpg" alt=""> Carrot Ginger Soup		
+            </a> </li>
+            <li class="li1"> <a href="soup2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamyPotatoLeekSoup.webp" alt="">Creamy Potato and Leek Soup		
+            </a></li>
+            <li class="li1">  <a href="soup3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/tomatobasilsoup.jpg" alt=""> Tomato Basil Soup	
+            </a> </li>
+            <li class="li1">  <a href="vegan1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamy-vegan-chickpea-salad-1.jpg" alt=""> Vegan Chickpea Salad		
+            </a> </li>
+            <li class="li1"> <a href="vegan2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Vegan-Avocado-Chocolate-Mousse.jpg" alt=""> Vegan Chocolate Mousse		
+            </a> </li>
+            <li class="li1">  <a href="vegan3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/veganLentilSoup.jpg" alt=""> Vegan Lentil Soup	
+            </a> </li>
+        </ul>
+        </header>
+
+        <div class="content-container">
+
+        <h1>cooking <br> resurrected</h1>
+
+        <div class="text-container">
+        <p>Welcome to Recipe<span>HUB</span>, where cooking meets creativity! Discover a world of delicious, easy-to-follow recipes tailored to your taste, skill level,and dietary needs. Whatever you're looking for quick meals or gourmet inspiration, we've got the perfect recipe for every occassion.</p>
+        </div>
+
+        <img src="images/randomFoodImages/Creamy Orange Soup with Rosemary.jpeg" alt="soup">
+
+        <button><a href="categories.html">EXPLORE</a></button>
+
+        <div class="haikei-vector-wave">
+            <img src="images/haikei-vectors/layered-waves-orange-haikei.svg" alt="layered-waves-orange-haikei">
+        </div>
+
+        </div>
+
+        <a href="mainBreakfast.html" class="button">EXPLORE</a>
+        <div class="breakfastPage">
+            <h1>BREAKFAST</h1>
+            <p>Welcome to our breakfast collection! Here, you'll find a variety of recipes to kickstart your day. Whether you're looking for something quick and easy or a more elaborate meal, we have plenty of options to choose from. Explore our recipes and find the perfect breakfast to suit your taste and schedule.</p>
+        </div>
+
+        <a href="mainLunch.html" class="button1">EXPLORE</a>
+        <div class="lunchPage">
+            <h1>LUNCH</h1>
+            <p>Discover our lunch recipes, perfect for fueling your afternoon. Whether you're in the mood for a light salad, a hearty sandwich, or a warm bowl of soup, we've got a variety of options to satisfy your midday hunger. Browse through our collection and find the ideal lunch to keep you going through the day.</p>
+        </div>
+
+        <a href="mainDinner.html" class="button2">EXPLORE</a>
+        <div class="dinnerPage">
+            <h1>DINNER</h1>
+            <p>Explore our dinner recipes for the perfect way to end your day. Whether you’re looking for something quick and easy or a more elaborate meal to share with family and friends, we’ve got a variety of options to satisfy your evening cravings. Browse our collection and find the perfect dish to enjoy tonight.
+            </p>
+        </div>
+
+        <div class="loginPage">
+            <div class="loginPageElements">
+            <h1>DELICIOUSNESS IN YOUR INBOX</h1>
+            <P>Enjoy updated handpicked collections and recommendations,</P>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;also keep track of everything you do here!</p>
+            <input type="email" name="email" id="email" placeholder="Email.....">
+            <button><a href="login.html">JOIN</a></button>
+            </div>
+        </div>
+
+        <div class="footerPage">
+            <h1>Recipe<span>HUB</span></h1>
+            <p>"© 2024 RecipeHUB. All Rights Reserved. Explore our collection of delicious recipes, perfect for every occasion. Follow us on social media for the latest updates and cooking inspiration. Happy Cooking!"</p>
+            <ul class="recipehub">
+                <li>Recipe<span>HUB</span></li>
+                <li class="footerInfo">About Us</li>
+                <li class="footerInfo">Contact Us</li>
+                <li class="footerInfo">Feedback</li>
+            </ul>
+            <ul class="follow">
+                <li>Follow</li>
+                <li class="footerSocials">Instagram</li>
+                <li class="footerSocials">Twitter/X</li>
+                <li class="footerSocials">Pinterest</li>
+            </ul>
+
+            <hr class="orangeBar">
+
+            <h2>© 2024 Recipe<span>HUB</span>. All Rights Reserved. </h2>
+            <div class="footerIcons">
+                <img src="images/icons/icons8-instagram-48.png" id="Instagram">
+                <img src="images/icons/icons8-twitterx-32.png" id="TwitterX">
+                <img src="images/icons/icons8-pinterest-25.png" id="Pinterest">
+            </div>
+        </div>
+    
+    </div>
+    <script src="functioning.JS">
+    </script>
+</body>
+</html>

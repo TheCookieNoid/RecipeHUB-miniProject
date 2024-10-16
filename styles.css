@@ -1,0 +1,603 @@
+@font-face {
+    font-family: grotesk;
+    src: url(fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --clr-orange: #F2613F;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+
+body{
+    overflow-x: hidden;
+    color: white;
+    font-family: grotesk;
+    background-color: #111111;
+
+}
+
+.main-container{
+    margin-top: 40px;
+    margin-left: 70px;
+    height: 6100px;
+}
+
+h1{
+    font-weight: 500;
+    color: white;
+    font-size: 48px;
+}
+
+span{
+    color: var(--clr-orange);
+}
+
+header ul li,a{
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+#googleMenu{
+    position: relative;
+    top: 5px;
+}
+
+header{
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+}
+
+header ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+a{
+    transition: all 0.3s ease 0s;
+}
+
+a:hover{
+    color: var(--clr-orange);
+}
+
+.search{
+    color: #F2613F;
+    background-color: black;
+}
+
+#RecipeList{
+    background-color:black;
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 100px;
+    position: absolute;        
+    top: 50px;
+    right: 20px;
+    width: 500px;
+    min-height: 125px;
+    max-height: 300px;
+    z-index : 999;
+    overflow-y: auto;   
+}
+
+#RecipeList::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+#RecipeList::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+#RecipeList::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+
+#RecipeList li{
+    margin: 0px;
+    padding: 0px;
+    color: #F2613F;
+    font-size: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+#RecipeList a{
+    font-size: 30px;
+}
+
+#color{
+    color: #F2613F;
+}
+
+#img1{
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px; 
+    margin-bottom: 100px;
+    position: absolute;
+    left: 5px;
+    right: 50px;
+}
+
+.search input{
+    padding-left: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    position: absolute; 
+    top: -5px;
+    right: 20px;
+    color: var(--clr-orange);
+    background-color: #111111;
+    border: none;
+    border: #F2613F 2px solid;
+    font-size: 30px;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 30px;
+}
+
+header img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 1750px;
+}
+/*
+.sideBar{
+    position: fixed;
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sideBar li{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.sideBar a{
+    width: 100%;
+}
+*/
+
+.content-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container h1{
+    position: relative;
+    top: 10px;
+    color: var(--clr-orange);
+    font-size: 130px;
+}
+
+.content-container img{
+    position: relative;
+    height: 800px;
+    width: 580px;
+    top: -550px;
+    left: 1220px;
+    border-radius: 25px;
+}
+
+.content-container .text-container p{
+    font-size: 30px
+}
+
+
+.content-container .text-container{
+    margin-top: 70px;
+    width: 1000px;
+}
+
+.content-container button{
+    color: white;
+    background-color: #111111;
+    border: none;
+    border: white 2px solid;
+    border-radius: 10px;
+    position: relative;
+    top: -650px;
+    height: 90px;
+    width: 190px;
+    font-size: 20px;
+}
+
+.content-container button:hover{
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: var(--clr-orange);
+}
+
+.content-container .haikei-vector-wave img{
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    width: 1920px;
+    z-index: -1;
+}
+
+.button{
+    position: relative;
+    top: 650px;
+    background-color: #111111;
+    display: inline-block;
+    height: 70px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button1{
+    position: relative;
+    top: 550px;
+    background-color: #111111;
+    display: inline-block;
+    height: 70px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button2{
+    position: relative;
+    top: 600px;
+    background-color: #111111;
+    display: inline-block;
+    height: 70px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.breakfastPage{
+    position: relative;
+    top: -390px;
+    left: -70px;
+    width: 1920px;
+    height: 1100px;
+    background-image: url(images/randomFoodImages/Perfect\ Sunny\ Side\ Up\ Egg\ in\ Skillet.jpeg);
+    z-index: -1;
+    background-size: cover;
+}
+
+.breakfastPage h1{
+    position: relative;
+    left: -820px;
+    top: 970px;
+    font-size: 140px;
+    transform: rotate(90deg);
+}
+
+.breakfastPage p{
+    width: 900px;
+    height: 230px;
+    font-size: 28px;
+    position: relative;
+    left: 730px;
+    top: 550px;
+}
+
+.lunchPage{
+    position: relative;
+    top: -390px;
+    left: -70px;
+    width: 1920px;
+    height: 1100px;
+    background-image: url(images/randomFoodImages/Lunch.png);
+    z-index: -1;
+}
+
+.lunchPage h1{
+    font-size: 140px;
+    transform: rotate(90deg);
+    position: relative;
+    left: -820px;
+    top: 1200px;
+}
+
+.lunchPage p{
+    width: 900px;
+    height: 230px;
+    font-size: 28px;
+    position: relative;
+    top: -150px;
+    left: 730px;
+}
+
+.dinnerPage{
+    position: relative;
+    top: -390px;
+    left: -70px;
+    width: 1920px;
+    height: 1100px;
+    background-image: url(images/randomFoodImages/Rustic\ Wood-Fired\ Pizza\ Feast.jpeg);
+    z-index: -1;
+}
+
+.dinnerPage h1{
+    font-size: 140px;
+    transform: rotate(90deg);
+    position: relative;
+    left: -820px;
+    top: 1200px;
+}
+
+.dinnerPage p{
+    width: 900px;
+    height: 230px;
+    font-size: 28px;
+    position: relative;
+    top: -150px;
+    left: 800px;
+}
+
+.loginPage{
+    width: 1920px;
+    height: 830px;
+    background-image: url(images/haikei-vectors/blurry-gradient-haikei.svg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    left: -70px;
+    top: -245px;
+}
+
+.loginPage h1{
+    font-size: 96px;
+    width: 700px;
+    position: relative;
+    top: 100px;
+    left: 600px;
+}
+
+.loginPage p{
+    font-size: 36px;
+    position: relative;
+    left: 450px;
+    top: 100px;
+    width: 1100px;
+}
+
+.loginPage input{
+    position: relative;
+    left: 400px;
+    top: 130px;
+    height: 70px;
+    width: 950px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 36px;
+}
+
+.loginPage input::placeholder{
+    color: black;
+}
+
+.loginPage button{
+    border-radius: 15px;
+    width: 225px;
+    height: 80px;
+    background-color: #254336;
+    position: relative;
+    top: 137px;
+    left: 400px;
+    color: white;
+    font-size: 40px;
+}
+
+.loginPageElements{
+    position: relative;
+    top: 50px;
+}
+
+.footerPage{
+    height: 830px;
+    width: 1920px;
+    background-image: url(images/haikei-vectors/wave-haikei.svg);
+    background-size: cover;
+    position: relative;
+    top: -248px;
+    left: -70px;
+}
+
+.footerPage h1{
+    font-weight: 500;
+    color: white;
+    font-size: 48px;
+    position: relative;
+    top: 350px;
+    left: 117px;
+    width: 300px;
+}
+
+.footerPage p{
+    font-size: 24px;
+    width: 500px;
+    position: relative;
+    left: 117px;
+    top: 380px;
+}
+
+.footerPage .recipehub{
+    font-size: 32px;
+    position: relative;
+    left: 800px;
+    top: 150px;
+    width: 500px;
+}
+
+.footerPage .follow{
+    font-size: 32px;
+    position: relative;
+    left: 1100px;
+    top: -100px;
+    width: 500px;
+}
+
+.footerPage li{
+    display: block;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.footerInfo:hover{
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: var(--clr-orange);
+}
+
+.footerSocials:hover{
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: var(--clr-orange);
+}
+
+.orangeBar{
+    background-color: var(--clr-orange);
+    height: 5px;
+    position: relative;
+    top: -50px;
+}
+
+.footerPage h2{
+    position: relative;
+    left: 117px;
+    width: 500px;
+}
+
+.footerPage .footerIcons{
+    position: relative;
+    left: 810px;
+    top: -40px;
+    width: 500px;
+}
+
+#Instagram{
+    height: 64px;
+    width: 64px;
+}
+
+#TwitterX{
+    position: relative;
+    top: -5px;
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+}
+
+#Pinterest{
+    position: relative;
+    top: -5px;
+    height: 64px;
+    width: 64px;
+    margin-left: 20px;
+}
+
+@media (max-width:1440px){
+    header input{
+        position: relative;
+        left: 475px;
+    }
+    
+    ul{
+        position: relative;
+        left: 250px;
+    }
+}
+
+@media (max-width:1366px){
+    header input{
+        position: relative;
+        left: 550px;
+    }
+
+    ul{
+        position: relative;
+        left: 275px;
+    }
+}
+
+@media (max-width:1024px){
+    .navbar ul{
+        display: flex;
+        width: 100px;
+        position: relative;
+        left: 300px;
+    }
+
+    header input{
+        width: 500px;
+        position: relative;
+        left: 890px;
+    }
+}
+
+@media (max-width:768px){   
+    header{
+        width: 800px;
+    }
+
+    header input{
+        position: relative;
+        left: 1000px;
+    }
+}
+
+@media (max-width:425px){
+    .hideOnMobile{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+

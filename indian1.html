@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHUB</title>
+    <style media="screen">
+@font-face {
+    font-family: grotesk;
+    src: url(fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --clr-orange: #F2613F;
+}
+
+body::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+
+body{
+    overflow-x: hidden;
+    color: white;
+    font-family: grotesk;
+    background-color: #111111;
+}
+
+.main-container{
+    margin-top: 40px;
+    margin-left: 70px;
+    height: 5300px;
+}
+
+h1{
+    font-weight: 500;
+    color: white;
+    font-size: 48px;
+}
+
+span{
+    color: var(--clr-orange);
+}
+
+li,a{
+    font-size: 32px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    margin-top: 30px;
+    margin-right: 40px;
+    position: relative;
+    top: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.navbar{
+    position: relative;
+    left: 250px;
+}
+.search{
+    position: relative;
+    left: 380px;
+    top: 10px;
+    color: #F2613F;
+    background-color: black;
+}
+#RecipeList {
+    background-color:black;
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 100px;
+    position: absolute;        
+    top: 80px;
+    right: 20px;
+    width: 500px;
+    min-height: auto;
+    max-height: 300px;
+    z-index : 999;
+    overflow-y: auto;   
+}
+#RecipeList::-webkit-scrollbar{
+    width: 0.5em;
+    height: 0.5em;
+}
+
+#RecipeList::-webkit-scrollbar-track{
+    background-color: #111111;
+}
+
+#RecipeList::-webkit-scrollbar-thumb{
+    background-color: grey;
+}
+#RecipeList li{
+    margin: 0px;
+    padding: 0px;
+    color: #F2613F;
+    font-size: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+#RecipeList a{
+    font-size: 30px;
+}
+#img1{
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    height: 80px; 
+     margin-bottom: 100px;
+    position: absolute;
+    left: 5px;
+    right: 50px;
+}
+a{
+    transition: all 0.3s ease 0s;
+}
+
+a:hover{
+    color: var(--clr-orange);
+}
+
+input{
+    font-size: 30px;
+    padding-left: 30px;
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    color: var(--clr-orange);
+    background-color: #111111;
+    border: none;
+    border: white 2px solid;
+}
+
+input::placeholder{
+    color: white;
+    font-size: 30px;
+}
+
+header img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 2375px;
+}
+
+.recipeTitle{
+    margin-top: 70px;
+    margin-left: 250px;
+    margin-bottom: 70px;
+}
+
+.recipeTitle h1{
+    font-size: 80px;
+}
+
+.recipeTitle p{
+    font-size: 32px;
+}
+
+.recipeImage{
+    position: relative;
+    left: 600px;
+    width: 1110px;
+    height: 624px;
+    border-radius: 20px;
+    background-image: url(images/randomFoodImages/Recipes/Chicken-Biryani-Recipe.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.recipeInfo{
+    position: relative;
+    left: 600px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 700px;
+}
+
+.recipeInfo h3{
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+.recipeInfo p{
+    font-size: 32px;
+    color: var(--clr-orange);
+}
+
+.ingredientsList{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ingredientsList h1{
+    position: relative;
+    left: 450px;
+    font-size: 55px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.ingredientsList p{
+    font-size: 32px;
+    width: 2400px;
+}
+
+.nutritionInfo{
+    width: 500px;
+    background-color: var(--clr-orange);
+    color: black;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 2150px;
+    left: 2000px;
+    margin-bottom: 30px;
+}
+
+.nutritionInfo h1{
+    color: black;
+    font-size: 55px;
+}
+
+.instructionsList h1{
+    position: relative;
+    left: 450px;
+    font-size: 55px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.instructionsList p{
+    font-size: 32px;
+    width: 2400px;
+}
+
+hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 2400px;
+}
+
+.note{
+    font-size: 32px;
+    width: 2400px;
+    margin-bottom: 50px;
+}
+
+.singleServing{
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.note1{
+    font-size: 32px;
+}
+
+.suggestionList{
+    position: relative;
+    margin-top: 50px;
+}
+
+.suggestionList h1{
+    margin-bottom: 30px;
+}
+
+.suggestionList p{
+    font-size: 52px;
+    width: 300px;
+}
+
+.hoverRecipe{
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+}
+
+#butterChicken{
+    background-image: url(images/randomFoodImages/Recipes/Butter-Chicken.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -100px;
+    left: 500px;
+    visibility: hidden;
+}
+
+#palakPaneer{
+    background-image: url(images/randomFoodImages/Recipes/palak-paneer.webp);
+    background-size: cover;
+    background-position: bottom;
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    visibility: hidden;
+}
+
+#bc:hover + #butterChicken{
+    visibility: visible;
+}
+
+#pp:hover + #palakPaneer{
+    visibility: visible;
+}
+
+.suggestionList hr{
+    width: 1000px;
+}
+</style>
+</head>
+<body>
+    <div class="main-container">
+
+        <header>
+            <h1>Recipe<span>HUB</span></h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Recipes</a></li>
+                    <li><a href="aboutUS.html">About Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search....." onkeyup="search()">
+            </div>
+            <br>
+    
+            <ul id="RecipeList" > 
+               <li class="li1"><img id="img1" src="images/randomFoodImages/Recipes/chocolate-chip-cookies.webp" alt=""> <a href="baking1.html" id="color">Chocolate Chip Cookies </a></li>
+                <li class="li1"> <a href="baking2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Banana-Bread.webp" alt=""> Banana Bread </a></li>
+                <li class="li1">  <a href="baking3.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Savory Seafood Dish Presentation.jpeg"  alt="">Vegetable Quiche </a> </li>
+                <li class="li1">  <a href="burger1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gourmet Burgers with Artistic Presentation.jpeg" alt=""> Grilled BBQ Chicken Burgers</a> </li>
+                <li class="li1">  <a href="burger2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mushroom-Swiss-Burger-9.webp" alt="">Mushroom Swiss Burger </a> </li>
+                <li class="li1">  <a href="burger3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/lamb-burger-recipe.jpg" alt="">Greek Lamb Burger	
+                </a> </li>
+                <li class="li1">  <a href="chicken1.html" id="color"><img id="img1" src="images/randomFoodImages/categoriesPage/Glazed Honey Soy Chicken Drumsticks with Sesame and Herbs.jpeg" alt=""> Baked Honey Glazed Chicken			
+    </a> </li>
+                <li class="li1">  <a href="chicken2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Garlic-Butter-Chicken-Thighs.webp" alt="">Baked Chicken Thighs		
+                </a> </li>
+                <li class="li1">  <a href="chicken3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-and-Vegetable-Stir-Fry.jpg" alt="">Chicken Stir Fry	
+        
+                </a> </li>
+                <li class="li1">  <a href="chinese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Kung-Pao-Chicken-SQ.jpg" alt="">Kung Pao Chicken	
+                </a> </li>
+                <li class="li1">  <axl href="chinese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/mapo-tofu.jpg" alt=""> Mapo Tofu	
+                </a></li>
+                <li class="li1">  <a href="chinese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/jiaozi-chinese-dumplings-.jpg" alt="">Dumplings (Jiaozi)		
+                </a> </li>
+                <li class="li1"> <a href="curryRice1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Coconut-Rice-Curry.webp" alt="">Coconut Curry Rice		
+                </a> </li>
+                <li class="li1">  <a href="curryRice2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/indianCurryRice.jpg" alt="">Indian Curry Rice		
+                </a > </li>
+                <li class="li1">  <a href="curryRice3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/ChickenCurryRiceStock.jpeg" alt="">Chicken Stock Curry Rice		
+                </a></li>
+                <li class="li1">  <a href="dessert1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chocolate-Mug-Cake-1.jpg" alt="">Chocolate Mug Cake		
+                </a> </li>
+                <li class="li1"> <a href="dessert2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/brownie-bites-15-of-15.jpg" alt="">Brownie Bites	
+                </a></li>
+                <li class="li1">  <a href="dessert3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Lemon-bars-1x1-2.jpg" alt="">Lemon Bars	
+                </a> </li>
+                <li class="li1">  <a href="grilling1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/greekChickenSkewers.jpg" alt="">Greek Grilled Chicken Skewers			
+                </a> </li>
+                <li class="li1"> <a href="grilling2.html" id="color" ><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Vegetable-Platter.jpg" alt="">Grilled Vegetable Platter		
+                </a> </li>
+                <li class="li1">  <a href="grilling3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Grilled-Lamb-Chops.jpg" alt="">Grilled Lamb Chops
+                </a> </li>
+                <li class="li1">  <a href="holidays1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Gingerbread-Cookies-1-of-1.jpg" alt="">Gingerbread Cookies		
+                </a> </li>
+                <li class="li1">  <a href="holidays2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/potatoLatkes.webp" alt="">Potato Latkes	
+                </a></li>
+                <li class="li1">  <a href="holidays3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/figgy-pudding-3sq.jpg" alt="">Figgy Pudding	
+                </a> </li>
+                <li class="li1"> <a href="indian1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Chicken-Biryani-Recipe.jpg" alt="">Chicken Biryani	
+                </a> </li>
+                <li class="li1">  <a href="indian2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/butter-chicken-.jpg" alt="">Butter Chicken	
+                </a> </li>
+                <li class="li1">  <a href="indian3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Palak-Paneer-500x500.jpg" alt=""> Palak Paneer	
+                </a></li>
+                <li class="li1">  <a href="japanese2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/red-dragon-roll.jpg" alt="">Dragon Roll	
+                </a> </li>
+                <li class="li1">  <a href="japanese3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/best-tiramisu-recipe-SQUARE.webp" alt=""> Tiramisu	
+                </a> </li>
+                <li class="li1"> <a href="lazy1.htmla" id="color"><img id="img1" src="images/randomFoodImages/Recipes/honeybutterchicken-insta.jpg" alt=""> Honey Butter Chicken		
+                </a></li>
+                <li class="li1">  <a href="lazy2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pasta-and-peas-featured.jpg" alt=""> Pasta With Peas	
+                </a> </li>
+                <li class="li1">  <a href="lazy3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Broccoli-Cheddar-Soup-Recipe-1-of-1-2.jpg" alt=""> Broccoli Cheddar Soup		
+                </a> </li>
+                <li class="li1"> <a href="japanese1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Japanese-Chicken-Curry1.jpg" alt=""> Japanese Chicken Curry Rice			
+                </a> </li>
+                <li class="li1">  <a href="mexican1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/chicken-tacos-square.jpg" alt="">Chicken Tacos	
+                </a> </li>
+                <li class="li1">  <a href="mexican2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Flavorful-Chicken-Fajitas_EXPS_CIW19_12540_B08_30_6b-e1722260583441.jpg" alt="">Chicken Fajitas	
+                </a> </li>
+                <li class="li1">  <a href="mexican3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mexican_Chicken_and_Bean_Burrito_Recipe-4.jpg" alt="">Chicken Burrito	
+                </a></li>
+                <li class="li1">  <a href="pasta1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/pesto-pasta-1.jpg" alt=""> Pesto Pasta	
+                </a> </li>
+                <li class="li1"> <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/garlic-parmesan-pasta-10.jpg" alt="">Garlic Parmesan Pasta		
+                </a> </li>
+                <li class="li1">  <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Aglio-olio-1-1.jpg" alt=""> Spaghetti Aglio e Olio		
+                </a> </li>
+                <li class="li1"> <a href="pastry1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Apple-Turnovers-6.jpg" alt="">Apple Turnovers	
+                </a></li>
+                <li class="li1" >  <a href="pasta2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mini-Fruit-Tarts-Feature.jpg" alt="">Fruit Tart Pastry	
+                </a> </li>
+                <li class="li1"> <a href="pasta3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/raspberry-danish-featured.jpg" alt="">Raspberry Danish Pastry		
+                </a></li>
+                <li class="li1">  <a href="pizza1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Pizza With Cherry Tomatoes.jpg" alt="">Pizza With Cherry Tomatoes			
+                </a> </li>
+                <li class="li1">  <a href="pizza2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Taco-Pizza.jpg" alt="">Taco Pizza	
+                </a> </li>
+                <li class="li1">  <a href="pizza3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Red-Pepper-Pizza.jpg" alt="">Red Pepper Pizza with Feta	
+                </a> </li>
+                <li class="li1"> <a href="salad1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caesar-Salad.jpg" alt=""> Caesar Salad	
+                </a> </li>
+                <li class="li1">  <a href="salad2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Caprese-Salad.jpg" alt="">Caprese Salad	
+                </a> </li>
+                <li class="li1">  <a href="salad3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/as20-med-mediterranean-zucchini-and-chickpea-salad.webp" alt=""> Mediterranean Zucchini and Chickpea Salad				
+                </a> </li>
+                <li class="li1">  <a href="sandwich1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/grilled-cheese.jpg" alt=""> Grilled Cheese Sandwich
+                      </a></li>
+                <li class="li1">  <a href="sandwich2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Egg salad sandwich.jpeg" alt="">Egg Salad Sandwich	 
+                </a> </li>
+                <li class="li1"> <a href="sandwich3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Veggie And Hummus Sandwich.jpg" alt="">Veggie And Hummus Sandwich		
+                </a></li>
+                <li class="li1"> <a href="seafood1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Baked-Salmon-1.jpg" alt="">Baked Salmon		
+                </a></li>
+    
+                <li class="li1">  <a href="seafood2.html"id="color"><img id="img1" src="images/randomFoodImages/Recipes/Spicy-Tuna-Poke-Bowl.webp" alt="">Spicy Tuna Poke Bowl		
+                </a> </li>
+                <li class="li1"> <a href="seafood3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/My-Best-Clam-Chowder.webp" alt="">Clam Chowder	
+                </a> </li>
+                <li class="li1">  <a href="smoothie1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/strawberrySmoothie.webp" alt="">Strawberry Smoothie		
+                </a> </li>
+                <li class="li1">  <a href="smoothie2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Mango-Pineapple-Smoothie.webp" alt="">Mango Pineapple Smoothie		
+                </a> </li>
+                <li class="li1">  <a href="smoothie3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Green Detox Smoothie.jpg" alt="">Green Detox Smoothie	
+                </a></li>
+                <li class="li1">  <a href="soup1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/carrot-ginger-soup.jpg" alt=""> Carrot Ginger Soup		
+                </a> </li>
+                <li class="li1"> <a href="soup2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamyPotatoLeekSoup.webp" alt="">Creamy Potato and Leek Soup		
+                </a></li>
+                <li class="li1">  <a href="soup3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/tomatobasilsoup.jpg" alt=""> Tomato Basil Soup	
+                </a> </li>
+                <li class="li1">  <a href="vegan1.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/creamy-vegan-chickpea-salad-1.jpg" alt=""> Vegan Chickpea Salad		
+                </a> </li>
+                <li class="li1"> <a href="vegan2.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/Vegan-Avocado-Chocolate-Mousse.jpg" alt=""> Vegan Chocolate Mousse		
+                </a> </li>
+                <li class="li1">  <a href="vegan3.html" id="color"><img id="img1" src="images/randomFoodImages/Recipes/veganLentilSoup.jpg" alt=""> Vegan Lentil Soup	
+                </a> </li>
+            </ul>
+    
+        </header>
+
+        <div class="recipeTitle">
+            <h1>Chicken Biryani</h1>
+            <p>Recipe by <a href="#">ruchis kitchen</a></p>
+        </div>
+
+        <div class="recipeImage"></div>
+
+        <div class="recipeInfo">
+            <div>
+                <h3>Prep Time</h3>
+                <p>20 mins</p>
+            </div>
+
+            <div>
+                <h3>Cook Time</h3>
+                <p>30 mins</p>
+            </div>
+
+            <div>
+                <h3>Marination</h3>
+                <p>1 hr</p>
+            </div>
+
+            <div>
+            <h3>Servings</h3>
+            <p>6</p>
+            </div>
+            
+        </div>
+
+        <div class="ingredientsList">
+            <h1>Ingredients</h1>
+            <p><span>Onions</span> 3 medium</p>
+            <p><span>Cornflour</span> 2 tablespoons</p>
+            <p><span>Oil</span> for frying</p>
+            
+            <p><strong>Saffron Milk:</strong></p>
+            <p><span>Milk</span> 3 tablespoons</p>
+            <p><span>Saffron strands</span> 1½ teaspoons</p>
+            
+            <p><strong>Biryani Spice Blend (makes 3 tablespoons):</strong></p>
+            <p><span>Garam Masala Powder</span> 1¼ teaspoons</p>
+            <p><span>Haldi (Turmeric powder)</span> ½ teaspoon</p>
+            <p><span>Shahi Jeera</span> 2 teaspoons</p>
+            <p><span>Coriander Powder</span> 1½ teaspoons</p>
+            <p><span>Kasoori methi (dried fenugreek leaves)</span> 1 teaspoon</p>
+            <p><span>Black Pepper</span> ½ teaspoon</p>
+            <p><span>Mace (Javitri, crushed to powder)</span> ½ teaspoon</p>
+            <p><span>Kashmiri Red chili powder</span> 2 teaspoons</p>
+            
+            <p><strong>Chicken Marinade:</strong></p>
+            <p><span>Chicken drumsticks (or thighs, boneless, skinless, cut into pieces)</span> 1 lb</p>
+            <p><span>Lemon Juice</span> ¼ cup</p>
+            <p><span>Yogurt</span> ½ cup</p>
+            <p><span>Garlic paste</span> ½ tablespoon</p>
+            <p><span>Ginger paste</span> ½ tablespoon</p>
+            <p><span>Lemon juice</span> 1 tablespoon</p>
+            <p><span>Fried onions (or Birista)</span> 1 cup</p>
+            <p><span>Chopped Cilantro</span> 2 tablespoons</p>
+            <p><span>Chopped Mint leaves</span> 2 tablespoons</p>
+            <p><span>Salt</span> to taste</p>
+            <p><span>Mustard oil</span> 5 tablespoons</p>
+            <p><span>Biryani spice blend</span> prepared above</p>
+            
+            <p><strong>For Rice:</strong></p>
+            <p><span>Rice</span> 1½ cups</p>
+            <p><span>Water</span> 2¼ cups</p>
+            <p><span>Whole Black Cardamom</span> 2</p>
+            <p><span>Cloves</span> ¼ teaspoon</p>
+            <p><span>Cumin seeds</span> ¼ teaspoon</p>
+            <p><span>Bay leaves</span> 3</p>
+            <p><span>Cinnamon Stick</span> 1</p>
+            <p><span>Star Anise</span> 1 (optional)</p>
+            <p><span>Salt</span> 2 teaspoons</p>
+            
+            <p><strong>Cook Marinated Chicken:</strong></p>
+            <p><span>Oil or ghee</span> 3 tablespoons</p>
+            <p><span>Bay leaves</span> 2</p>
+            <p><span>Onion</span> 1 large, thinly sliced</p>
+            
+            <p><strong>Assemble Chicken Biryani:</strong></p>
+            <p><span>Seasoned parboiled rice</span> from above</p>
+            <p><span>Half-cooked chicken</span> along with its juices</p>
+            <p><span>Fried onions</span> (or Birista)</p>
+            <p><span>Saffron milk</span></p>
+            <p><span>Ghee</span></p>
+            <p><span>Fresh cilantro</span> and <span>mint leaves</span></p>
+            <p><span>Garam Masala Powder</span> (optional)</p>
+                                                                 
+        </div>
+
+        <div class="nutritionInfo">
+            <h1>Nutrition</h1>
+            <p>Calories: 582kcal</p>
+            <p>Carbohydrates: 56g</p>
+            <p>Protein: 19g</p>
+            <p>Fat: 31g</p>
+            <p>Saturated Fat: 6g</p>
+            <p>Polyunsaturated Fat: 6g</p>
+            <p>Monounsaturated Fat: 15g</p>
+            <p>Trans Fat: 0.1g</p>
+            <p>Cholesterol: 69mg</p>
+            <p>Sodium: 940mg</p>
+            <p>Potassium: 706mg</p>
+            <p>Fiber: 4g</p>
+            <p>Sugar: 5g</p>
+            <p>Vitamin A: 477 IU</p>
+            <p>Vitamin C: 12mg</p>
+            <p>Calcium: 111mg</p>
+            <p>Iron: 3mg</p>                                         
+        </div>
+
+        <div class="instructionsList">
+            <h1>Instructions</h1>
+            <p><span>MAKING OF BIRISTA- FRIED ONIONS</span></p>
+            <p>1. Heat oil in a pan.</p>
+            <p>2. Combine the thinly sliced onions and cornstarch in a large bowl. Toss to coat cornstarch all over the onion rings.</p>
+            <p>3. Dust off the excess cornstarch and add a batch of onion rings to the hot shimmering oil. Fry the onions for 7-8 minutes or until deep golden brown. Remove from oil and drain on a kitchen paper towel. Repeat until all the coated onions are cooked.</p>
+            <p>4. Fried onions are ready for biryani.</p>
+            <p>5. Let’s move on to the next step. Add milk to a microwave-safe bowl. Heat the milk for 40 seconds. Remove from the microwave and add saffron strands to the milk. Stir until combined and set aside. </p>
+            <p><span>MARINATE CHICKEN</span></p>
+            <p>1. Clean and wash the chicken pieces thoroughly under tap water. Drain the water completely.</p>
+            <p>2. Combine the rinsed chicken pieces with lemon juice in a large whisking bowl. Toss to combine. Cover and refrigerate the chicken for at least 30 minutes.</p>
+            <p>3. After the rest time is over, add yogurt, biryani spice blend, and ginger-garlic paste to the chicken.</p>
+            <p>4. Add fried onions, mustard oil, cilantro leaves, and mint leaves to the chicken.</p>
+            <p>5. Mix and toss the chicken to coat in tis marinade. Rub the marinade all over the pieces.</p>
+            <p>6. Cover and allow it to rest for an hour.</p>
+            <p><span>PREPARE RICE</span></p>
+            <p>1. While the chicken is marinating, let's work with the rice. Sort through the rice to remove all the pebbles and gritty things. Rinse and rub rice thoroughly until the water runs clear. Pre-soak the rice for 20 minutes. After that, drain and set it aside.</p>
+            <p>2. Add water to a large pan which has a tight-fitting lid. Flavor the water with whole spices, cumin seeds, and salt.</p>
+            <p>3. Add rinsed rice to this water. Give it a good stir. Bring it to a simmer over medium heat. Simmer the rice for 10 minutes, uncovered.</p>
+            <p>4. Gently mix the rice and parboil it (halfway cooked) for 4-6 minutes in hot water. When the cooking time has elapsed, turn off the heat and let the rice stand in hot water for 4-5 minutes. The rice should be 70% cooked.</p>
+            <p>5. If it breaks instantly when pressed, then you have overcooked the rice. Refrain from proceeding with this rice, as you will end up with sticky biryani. </p>
+            <p>6. Once the rice is parboiled, turn the heat off. Remove the rice from the pan and drain it in the strainer. Let the rice stand in the sieve for 2-3 minutes until all the extra water is drained.</p>
+            <p>7. Discard the whole spices.</p>
+            <p>8. Replace the cover to keep the rice warm.</p>
+            <p><span>COOK THE CHICKEN</span></p>
+            <p>1. Heat ghee in a heavy-bottomed Dutch oven. Add chicken and cook.</p>
+            <p>2. Cook the chicken pieces for 5-6 minutes over medium heat. You want it mostly cooked. The rest of the cooking will finish in the assembled biryani. Once the cooking time has elapsed, please remove it from the heat and set it aside.</p>
+            <p><span>ASSEMBLE BIRYANI</span></p>
+            <p>1. Time to assemble the chicken biryani. Take a handi or a deep dish pan. Drizzle oil or ghee at its base. Add bay leaves and sliced onions to this pan. Sauté until the onions are translucent.</p>
+            <p>2. Add half-cooked chicken to the pan.</p>
+            <p>3. Layer it with parboiled rice and drizzle a generous amount of ghee over it.</p>
+            <p>4. Layer this delicious biryani with chopped cilantro, mint leaves, and fried onions. Drizzle the saffron milk mixture overtop.</p>
+            <p>5. Finally, add a dash of garam masala. Sprinkle a tablespoon of water and seal the pan.</p>
+            <p>6. Cover the pan and seal the cover with a cloth or kneaded dough. Dum, cook for 10-15 minutes until rice is cooked thoroughly and is all fluffy and plump.</p>
+            <p>7. Remove the cloth and uncover the pan once the desired cooking time is done.</p>
+            <p>8. Chicken biryani is all ready. Allow it to sit undisturbed in the pan for 5-10 minutes.</p>
+            <p>9. Fluff the cooked biryani with a flat spoon.</p>
+            <p>10. Garnish with more fried onions and a fresh sprig of mint leaves. Serve hot, along with your favorite raita or chutney.</p>
+        </div>
+
+        <hr>
+
+        <div class="note">
+            <p>Our goal is to offer the best recipes while minimizing waste. To avoid food waste if you don’t enjoy a recipe, we provide single-serving ingredient lists. Here’s the list:</p>
+        </div>
+
+        <div class="singleServing">
+            <p><span>Onions</span> 1 medium</p>
+            <p><span>Cornflour</span> 0.67 tablespoons</p>
+            <p><span>Oil</span> for frying</p>
+            
+            <p><strong>Saffron Milk:</strong></p>
+            <p><span>Milk</span> 1 tablespoon</p>
+            <p><span>Saffron strands</span> 0.5 teaspoons</p>
+            
+            <p><strong>Biryani Spice Blend (makes 3 tablespoons):</strong></p>
+            <p><span>Garam Masala Powder</span> 0.42 teaspoon</p>
+            <p><span>Haldi (Turmeric powder)</span> 0.17 teaspoon</p>
+            <p><span>Shahi Jeera</span> 0.67 teaspoons</p>
+            <p><span>Coriander Powder</span> 0.5 teaspoons</p>
+            <p><span>Kasoori methi (dried fenugreek leaves)</span> 0.33 teaspoon</p>
+            <p><span>Black Pepper</span> 0.17 teaspoon</p>
+            <p><span>Mace (Javitri, crushed to powder)</span> 0.17 teaspoon</p>
+            <p><span>Kashmiri Red chili powder</span> 0.67 teaspoons</p>
+            
+            <p><strong>Chicken Marinade:</strong></p>
+            <p><span>Chicken drumsticks (or thighs, boneless, skinless, cut into pieces)</span> 0.33 lb</p>
+            <p><span>Lemon Juice</span> 0.08 cup</p>
+            <p><span>Yogurt</span> 0.17 cup</p>
+            <p><span>Garlic paste</span> 0.17 tablespoon</p>
+            <p><span>Ginger paste</span> 0.17 tablespoon</p>
+            <p><span>Lemon juice</span> 0.33 tablespoon</p>
+            <p><span>Fried onions (or Birista)</span> 0.33 cup</p>
+            <p><span>Chopped Cilantro</span> 0.67 tablespoons</p>
+            <p><span>Chopped Mint leaves</span> 0.67 tablespoons</p>
+            <p><span>Salt</span> to taste</p>
+            <p><span>Mustard oil</span> 1.67 tablespoons</p>
+            <p><span>Biryani spice blend</span> prepared above</p>
+            
+            <p><strong>For Rice:</strong></p>
+            <p><span>Rice</span> 0.5 cups</p>
+            <p><span>Water</span> 0.75 cups</p>
+            <p><span>Whole Black Cardamom</span> 0.67</p>
+            <p><span>Cloves</span> 0.08 teaspoon</p>
+            <p><span>Cumin seeds</span> 0.08 teaspoon</p>
+            <p><span>Bay leaves</span> 1</p>
+            <p><span>Cinnamon Stick</span> 0.33</p>
+            <p><span>Star Anise</span> 0.33 (optional)</p>
+            <p><span>Salt</span> 0.67 teaspoons</p>
+            
+            <p><strong>Cook Marinated Chicken:</strong></p>
+            <p><span>Oil or ghee</span> 1 tablespoon</p>
+            <p><span>Bay leaves</span> 0.67</p>
+            <p><span>Onion</span> 0.33 large, thinly sliced</p>
+            
+            <p><strong>Assemble Chicken Biryani:</strong></p>
+            <p><span>Seasoned parboiled rice</span> from above</p>
+            <p><span>Half-cooked chicken</span> along with its juices</p>
+            <p><span>Fried onions</span> (or Birista)</p>
+            <p><span>Saffron milk</span></p>
+            <p><span>Ghee</span></p>
+            <p><span>Fresh cilantro</span> and <span>mint leaves</span></p>
+            <p><span>Garam Masala Powder</span> (optional)</p>                                                                             
+        </div>
+
+        <div class="note1">
+            The ingredients list provided above is from us and not by the original author of the recipe.
+        </div>
+
+        <div class="suggestionList">
+            <h1>You might also like....</h1>
+            <p id="bc"><a href="indian2.html">Butter Chicken (Murgh Makhani)</a></p>
+            <div class="hoverRecipe" id="butterChicken"></div>
+            <hr>
+            <p id="pp"><a href="indian3.html">Palak Paneer</a></p>
+            <div class="hoverRecipe" id="palakPaneer"></div>
+            <hr>
+        </div>
+        <script src="functioning.JS"></script>
+    </div>
+</body>
+</html>
