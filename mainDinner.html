@@ -63,41 +63,39 @@ li,a{
     text-decoration: none;
 }
 
-#googleMenu{
-    position: relative;
-    top: 5px;
-}
-
-header{
-    margin-top: 30px;
-    margin-right: 40px;
-    position: relative;
-    top: -20px;
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
-ul{
+header h1{
+    position : relative;
+    top: 0px;
+    left: 50px;
+    font-size: 50px;
+}
+
+.navbar ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    left: 50px;
 }
 
-li{
-    display: inline-block;
-    padding: 0px 20px;
+.navbar li {
+    padding: 0 10px;
 }
-.navbar{
-    position: relative;
-    left: 250px;
+.navbar input{
+    margin-left: 30em;
 }
-.search{
-    position: relative;
-    left: 380px;
-    top: 10px;
-    color: #F2613F;
-    background-color: black;
-}
+
 #RecipeList {
     background-color:black;
     display: none;
@@ -105,8 +103,8 @@ li{
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 80px;
-    right: 20px;
+    top: 100px;
+    right: 60px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -131,7 +129,7 @@ li{
     color: #F2613F;
     font-size: 10px;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 
 }
 #RecipeList a{
@@ -161,6 +159,8 @@ input{
     border-radius: 10px;
     width: 500px;
     height: 50px;
+    position: relative;
+    right: -5em;
     color: var(--clr-orange);
     background-color: #111111;
     border: none;
@@ -172,17 +172,13 @@ input::placeholder{
     font-size: 30px;
 }
 
-header img{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 2350px;
-}
 
 .topImage{
+    position: relative;
+    left: -70px;
     margin-top: 70px;
-    height: 450px;
-    width: 2400px;
+    height: 400px;
+    width: 1920px;
     background-image: url(images/randomFoodImages/mainRecipePage/Elegant\ Festive\ Feast\ with\ Sparkling\ Toast.jpeg);
     background-position: center;
     background-size: cover;
@@ -206,14 +202,13 @@ header img{
     gap: 30px;
     margin-top: 50px;
     height: 450px;
-    width: 2400px;
+    width: 1820px;
 }
 
 .flex-container div{
     border-radius: 20px;
     flex: 1;
 }
-
 #one{
     background-image: url(images/randomFoodImages/categoriesPage/Glazed\ Honey\ Soy\ Chicken\ Drumsticks\ with\ Sesame\ and\ Herbs.jpeg);
     background-position: center;
@@ -234,12 +229,23 @@ header img{
 
 .recipeNames{
     display: flex;
-    gap: 500px;
     margin-top: 20px;
-    height: 450px;
-    width: 2400px;
+    height: 200px;
+    width: 1800px;
 }
-
+#name1{
+    width: 550px;
+}
+#name2{
+    position: relative;
+    right: -1.5em;
+    width: 450px;
+}
+#name3{
+    position: relative;
+    right: -5em;
+    width: 350px;
+}
 .recipeNames h1:hover{
     color: var(--clr-orange);
 }
@@ -405,9 +411,9 @@ header img{
     </div>
 
     <div class="recipeNames">
-        <a href="chicken1.html"><h1>Baked Honey Glazed Chicken</h1></a>
-        <a href="chinese1.html"><h1>Kung Pao Chicken</h1></a>
-        <a href="seafood1.html"><h1>Baked Salmon</h1></a>
+        <a href="chicken1.html"><h1 id="name1">Baked Honey Glazed Chicken</h1></a>
+        <a href="chinese1.html"><h1 id="name2">Kung Pao Chicken</h1></a>
+        <a href="seafood1.html"><h1 id="name3">Baked Salmon</h1></a>
     </div>
 
     </div>
