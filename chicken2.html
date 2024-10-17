@@ -34,6 +34,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 body{
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
     color: white;
     font-family: grotesk;
@@ -41,59 +43,95 @@ body{
 }
 
 .main-container{
+    width: 1832px;
     margin-top: 40px;
-    margin-left: 70px;
-    height: 5300px;
+    margin-left: 4.3em;
+    height: auto;
 }
 
 h1{
     font-weight: 500;
     color: white;
-    font-size: 48px;
+    font-size: 50px;
 }
 
 span{
     color: var(--clr-orange);
 }
 
-li,a{
-    font-size: 32px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-}
 
-header{
-    margin-top: 30px;
-    margin-right: 40px;
-    position: relative;
-    top: -20px;
+header {
+    width: 1832px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
-ul{
-    list-style: none;
-}
-
-li{
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.navbar{
-    position: relative;
-    left: 250px;
-}
-.search{
-    position: relative;
-    left: 380px;
+header h1{
+    position : relative;
     top: 10px;
-    color: #F2613F;
-    background-color: black;
+    left: 50px;
+    font-size: 50px;
 }
+.navbar ul {
+    position: relative;
+    left: 80px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar li {
+    padding: 0 10px;
+}
+.navbar input{
+    margin-left: 30em;
+}
+
+a {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;    
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--clr-orange);
+}
+
+input {
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    top: -20px;
+    left: -60px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    height: 40px;
+    color: var(--clr-orange);
+    background-color: var(--clr-dark);
+    border: none;
+    border: 2px solid white;
+}
+
+input::placeholder {
+    color: white;
+    font-size: 18px;
+}
+
+#li2 {
+    position: relative;
+    top: 35px;
+    left: -45em;
+}
+
 #RecipeList {
     background-color:black;
     display: none;
@@ -101,8 +139,8 @@ li{
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 80px;
-    right: 20px;
+    top: 88px;
+    right: 7    0px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -143,39 +181,8 @@ li{
     left: 5px;
     right: 50px;
 }
-a{
-    transition: all 0.3s ease 0s;
-}
-
-a:hover{
-    color: var(--clr-orange);
-}
-
-input{
-    font-size: 30px;
-    padding-left: 30px;
-    border-radius: 10px;
-    width: 500px;
-    height: 50px;
-    color: var(--clr-orange);
-    background-color: #111111;
-    border: none;
-    border: white 2px solid;
-}
-
-input::placeholder{
-    color: white;
-    font-size: 30px;
-}
-
-header img{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 2375px;
-}
-
 .recipeTitle{
+    width: 1580px;
     margin-top: 70px;
     margin-left: 250px;
     margin-bottom: 70px;
@@ -191,9 +198,9 @@ header img{
 
 .recipeImage{
     position: relative;
-    left: 600px;
-    width: 1110px;
-    height: 624px;
+    left: 17em;
+    width: 69.375em;
+    height: 39em;
     border-radius: 20px;
     background-image: url(images/randomFoodImages/Recipes/Garlic-Butter-Chicken-Thighs.webp);
     background-size: cover;
@@ -202,7 +209,7 @@ header img{
 
 .recipeInfo{
     position: relative;
-    left: 600px;
+    left: 17em;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -221,6 +228,9 @@ header img{
 }
 
 .ingredientsList{
+    position: relative;
+    top: 5em;
+    width: 1500px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -234,8 +244,8 @@ header img{
 }
 
 .ingredientsList p{
+     width: 1000px;
     font-size: 32px;
-    width: 2400px;
 }
 
 .nutritionInfo{
@@ -250,8 +260,8 @@ header img{
     gap: 10px;
     border-radius: 20px;
     position: absolute;
-    top: 1150px;
-    left: 2000px;
+    top: 1100px;
+    left: 1300px;
     margin-bottom: 30px;
 }
 
@@ -259,7 +269,10 @@ header img{
     color: black;
     font-size: 55px;
 }
-
+.instructionsList{
+    position: relative;
+    top: 12em;
+}
 .instructionsList h1{
     position: relative;
     left: 450px;
@@ -269,34 +282,41 @@ header img{
 }
 
 .instructionsList p{
-    font-size: 32px;
-    width: 2400px;
+    font-size: 25px;
+    width: 1832px;
 }
 
 hr{
+    position: relative;
+    top: 12em;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 2400px;
+    width: 1832px;
 }
 
-.note{
+.note{ position: relative;
+    top: 6em;
     font-size: 32px;
-    width: 2400px;
+    width: 1832px;
     margin-bottom: 50px;
 }
 
 .singleServing{
-    font-size: 32px;
+    position: relative;
+    top: 6.5em;
+    font-size: 25px;
     margin-bottom: 50px;
 }
 
 .note1{
     font-size: 32px;
+    position: relative;
+    top: 4.5em;
 }
 
 .suggestionList{
     position: relative;
-    margin-top: 50px;
+    margin-top: 180px;
 }
 
 .suggestionList h1{
@@ -307,7 +327,14 @@ hr{
     font-size: 52px;
     width: 300px;
 }
-
+#hr1{
+    position: relative;
+    top: 15px;
+}
+#hr2{
+    position: absolute;
+    top: 25em;
+}
 .hoverRecipe{
     height: 500px;
     width: 500px;
@@ -572,10 +599,10 @@ hr{
             <h1>You might also like....</h1>
             <p id="hgc"><a href="chicken1.html">Honey Glazed Chicken</a></p>
             <div class="hoverRecipe" id="honeyGlazedChicken"></div>
-            <hr>
+            <hr id="hr1">
             <p id="csf"><a href="chicken3.html">Chicken Stir Fry</a></p>
             <div class="hoverRecipe" id="chickenStirFry"></div>
-            <hr>
+            <hr id="hr2">
         </div>
         <script src="functioning.JS"></script>
     </div>
