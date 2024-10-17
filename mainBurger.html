@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: red solid 1px;
 } 
 
 :root{
@@ -63,41 +64,41 @@ li,a{
     text-decoration: none;
 }
 
-#googleMenu{
-    position: relative;
-    top: 5px;
-}
 
-header{
-    margin-top: 30px;
-    margin-right: 40px;
-    position: relative;
-    top: -20px;
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
-ul{
+header h1{
+    position : relative;
+    top: 0px;
+    left: 50px;
+    font-size: 50px;
+}
+
+.navbar ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    left: 50px;
 }
 
-li{
-    display: inline-block;
-    padding: 0px 20px;
+.navbar li {
+    padding: 0 10px;
 }
-.navbar{
-    position: relative;
-    left: 250px;
+.navbar input{
+    margin-left: 30em;
 }
-.search{
-    position: relative;
-    left: 380px;
-    top: 10px;
-    color: #F2613F;
-    background-color: black;
-}
+
+
 #RecipeList {
     background-color:black;
     display: none;
@@ -105,8 +106,8 @@ li{
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 80px;
-    right: 20px;
+    top: 120px;
+    right: 45px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -131,7 +132,7 @@ li{
     color: #F2613F;
     font-size: 10px;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 
 }
 #RecipeList a{
@@ -161,6 +162,8 @@ input{
     border-radius: 10px;
     width: 500px;
     height: 50px;
+    position: relative;
+    right: -5em;
     color: var(--clr-orange);
     background-color: #111111;
     border: none;
@@ -172,17 +175,14 @@ input::placeholder{
     font-size: 30px;
 }
 
-header img{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 2350px;
-}
+
 
 .topImage{
+    position: relative;
+    left: -70px;
     margin-top: 70px;
-    height: 450px;
-    width: 2400px;
+    height: 400px;
+    width: 1920px;
     background-image: url(images/randomFoodImages/mainRecipePage/Gourmet\ Burger\ on\ Rustic\ Plate.jpeg);
     background-position: center;
     background-size: cover;
@@ -206,7 +206,7 @@ header img{
     gap: 30px;
     margin-top: 50px;
     height: 450px;
-    width: 2400px;
+    width: 1820px;
 }
 
 .flex-container div{
@@ -234,10 +234,22 @@ header img{
 
 .recipeNames{
     display: flex;
-    gap: 220px;
     margin-top: 20px;
-    height: 450px;
-    width: 2400px;
+    height: 200px;
+    width: 1800px;
+}
+#name1{
+    width: 500px;
+}
+#name2{
+    position: relative;
+    right: -2.5em;
+    width: 560px;
+}
+#name3{
+    position: relative;
+    right: -3.8em;
+    width: 500px;
 }
 
 .recipeNames h1:hover{
@@ -405,9 +417,9 @@ header img{
     </div>
 
     <div class="recipeNames">
-        <a href="burger1.html"><h1>Grilled BBQ Chicken Burgers</h1></a>
-        <a href="burger2.html"><h1>Mushroom Swiss Burger</h1></a>
-        <a href="burger3.html"><h1>Greek Lamb Burger</h1></a>
+        <a href="burger1.html"><h1 id="name1">Grilled BBQ Chicken Burgers</h1></a>
+        <a href="burger2.html"><h1 id="name2">Mushroom Swiss Burger</h1></a>
+        <a href="burger3.html"><h1 id="name3">Greek Lamb Burger</h1></a>
     </div>
 
     </div>

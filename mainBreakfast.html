@@ -63,10 +63,6 @@ li,a{
     text-decoration: none;
 }
 
-#googleMenu{
-    position: relative;
-    top: 5px;
-}
 
 header{
     margin-top: 30px;
@@ -79,25 +75,30 @@ header{
     align-items: center;
 }
 
-ul{
-    list-style: none;
+header h1{
+    position : relative;
+    top: 0px;
+    left: 50px;
+    font-size: 50px;
 }
 
-li{
-    display: inline-block;
-    padding: 0px 20px;
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+   
 }
-.navbar{
-    position: relative;
-    left: 250px;
+
+.navbar li {
+    padding: 0 10px;
 }
-.search{
-    position: relative;
-    left: 380px;
-    top: 10px;
-    color: #F2613F;
-    background-color: black;
+.navbar input{
+    margin-left: 30em;
 }
+
+
 #RecipeList {
     background-color:black;
     display: none;
@@ -105,8 +106,8 @@ li{
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 80px;
-    right: 20px;
+    top: 120px;
+    right: 45px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -131,7 +132,7 @@ li{
     color: #F2613F;
     font-size: 10px;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 
 }
 #RecipeList a{
@@ -161,28 +162,26 @@ input{
     border-radius: 10px;
     width: 500px;
     height: 50px;
+    position: relative;
+    right: -6em;
     color: var(--clr-orange);
     background-color: #111111;
     border: none;
     border: white 2px solid;
 }
-
 input::placeholder{
     color: white;
     font-size: 30px;
 }
 
-header img{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    left: 2350px;
-}
+
 
 .topImage{
+    position: relative;
+    left: -70px;
     margin-top: 70px;
-    height: 450px;
-    width: 2400px;
+    height: 400px;
+    width: 1920px;
     background-image: url(images/randomFoodImages/mainRecipePage/Inviting\ Breakfast\ Setup.jpeg);
     background-position: center;
     background-size: cover;
@@ -206,7 +205,7 @@ header img{
     gap: 30px;
     margin-top: 50px;
     height: 450px;
-    width: 2400px;
+    width: 1820px;
 }
 
 .flex-container div{
@@ -221,7 +220,7 @@ header img{
 }
 
 #two{
-    background-image: url(images/randomFoodImages/Recipes/vegetable-quiche.webp);
+    background-image: url(images/randomFoodImages/mainRecipePage/Homemade\ Savory\ Pie.jpeg);
     background-position: center;
     background-size: cover;
 }
@@ -234,12 +233,23 @@ header img{
 
 .recipeNames{
     display: flex;
-    gap: 500px;
     margin-top: 20px;
-    height: 450px;
-    width: 2400px;
+    height: 200px;
+    width: 1800px;
 }
-
+#name1{
+    width: 550px;
+}
+#name2{
+    position: relative;
+    right: -1.5em;
+    width: 450px;
+}
+#name3{
+    position: relative;
+    right: -5em;
+    width: 500px;
+}
 .recipeNames h1:hover{
     color: var(--clr-orange);
 }
@@ -405,9 +415,9 @@ header img{
     </div>
 
     <div class="recipeNames">
-        <a href="baking2.html"><h1>banana Bread</h1></a>
-        <a href="baking3.html"><h1>Vegetable Quiche</h1></a>
-        <a href="smoothie1.html"><h1>Strawberry Smoothie</h1></a>
+        <a href="baking2.html"><h1 id="name1">banana Bread</h1></a>
+        <a href="baking3.html"><h1 id="name2">Vegetable Quiche</h1></a>
+        <a href="smoothie1.html"><h1 id="name3">Strawberry Smoothie</h1></a>
     </div>
 
     </div>
