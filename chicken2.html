@@ -18,6 +18,8 @@
 
 :root{
     --clr-orange: #F2613F;
+    --clr-dark: #111111;
+    --clr-grey: grey;
 }
 
 body::-webkit-scrollbar{
@@ -39,29 +41,28 @@ body{
     overflow-x: hidden;
     color: white;
     font-family: grotesk;
-    background-color: #111111;
+    background-color: var(--clr-dark);
+    padding: 20px;
 }
 
 .main-container{
-    width: 1832px;
     margin-top: 40px;
-    margin-left: 4.3em;
-    height: auto;
+    margin-left: 70px;
+    height: 5300px;
 }
 
-h1{
+h1 {
     font-weight: 500;
     color: white;
-    font-size: 50px;
+    font-size: 36px;
+    position: relative;
 }
 
-span{
+span {
     color: var(--clr-orange);
 }
 
-
 header {
-    width: 1832px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -72,13 +73,15 @@ header {
 
 header h1{
     position : relative;
-    top: 10px;
-    left: 50px;
+    top: 0px;
+    left: 70px;
     font-size: 50px;
 }
+
 .navbar ul {
     position: relative;
-    left: 80px;
+    top: 20px;
+    left: 70px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -106,15 +109,15 @@ a:hover {
 }
 
 input {
-    font-size: 18px;
+    font-size: 25px;
     padding: 10px;
     position: relative;
-    top: -20px;
-    left: -60px;
+    top: 0px;
+    left: 220px;
     border-radius: 10px;
     width: 500px;
     max-width: 100%;
-    height: 40px;
+    height: 50px;
     color: var(--clr-orange);
     background-color: var(--clr-dark);
     border: none;
@@ -123,15 +126,13 @@ input {
 
 input::placeholder {
     color: white;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 #li2 {
     position: relative;
-    top: 35px;
-    left: -45em;
+    top: -20px;
 }
-
 #RecipeList {
     background-color:black;
     display: none;
@@ -139,8 +140,8 @@ input::placeholder {
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 88px;
-    right: 7    0px;
+    top: 120px;
+    right: 25px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -176,7 +177,7 @@ input::placeholder {
     cursor: pointer;
     width: 80px;
     height: 80px; 
-     margin-bottom: 100px;
+    margin-bottom: 100px;
     position: absolute;
     left: 5px;
     right: 50px;
@@ -244,7 +245,7 @@ input::placeholder {
 }
 
 .ingredientsList p{
-     width: 1000px;
+    width: 1000px;
     font-size: 32px;
 }
 
@@ -260,7 +261,7 @@ input::placeholder {
     gap: 10px;
     border-radius: 20px;
     position: absolute;
-    top: 1100px;
+    top: 1250px;
     left: 1300px;
     margin-bottom: 30px;
 }
@@ -283,7 +284,7 @@ input::placeholder {
 
 .instructionsList p{
     font-size: 25px;
-    width: 1832px;
+    width: 1795px;
 }
 
 hr{
@@ -291,13 +292,13 @@ hr{
     top: 12em;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 1832px;
+    width: 1795px;
 }
 
 .note{ position: relative;
     top: 6em;
     font-size: 32px;
-    width: 1832px;
+    width: 1795px;
     margin-bottom: 50px;
 }
 
@@ -333,7 +334,7 @@ hr{
 }
 #hr2{
     position: absolute;
-    top: 25em;
+    top: 21em;
 }
 .hoverRecipe{
     height: 500px;
@@ -381,9 +382,9 @@ hr{
             <h1>Recipe<span>HUB</span></h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="categories.html">Recipes</a></li>
-                    <li><a href="aboutUS.html">About Us</a></li>
+                    <li id="li2"><a href="index.html">Home</a></li>
+                    <li id="li2"><a href="categories.html">Recipes</a></li>
+                    <li id="li2"><a href="aboutUS.html">About Us</a></li>
                 </ul>
             </nav>
 

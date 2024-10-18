@@ -18,6 +18,8 @@
 
 :root{
     --clr-orange: #F2613F;
+    --clr-dark: #111111;
+    --clr-grey: grey;
 }
 
 body::-webkit-scrollbar{
@@ -39,29 +41,28 @@ body{
     overflow-x: hidden;
     color: white;
     font-family: grotesk;
-    background-color: #111111;
+    background-color: var(--clr-dark);
+    padding: 20px;
 }
 
 .main-container{
-    width: 1832px;
     margin-top: 40px;
-    margin-left: 4.3em;
-    height: auto;
+    margin-left: 70px;
+    height: 5300px;
 }
 
-h1{
+h1 {
     font-weight: 500;
     color: white;
-    font-size: 50px;
+    font-size: 36px;
+    position: relative;
 }
 
-span{
+span {
     color: var(--clr-orange);
 }
 
-
 header {
-    width: 1832px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -72,13 +73,15 @@ header {
 
 header h1{
     position : relative;
-    top: 10px;
-    left: 50px;
+    top: 0px;
+    left: 70px;
     font-size: 50px;
 }
+
 .navbar ul {
     position: relative;
-    left: 80px;
+    top: 40px;
+    left: 70px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -106,15 +109,15 @@ a:hover {
 }
 
 input {
-    font-size: 18px;
+    font-size: 28px;
     padding: 10px;
     position: relative;
     top: -20px;
-    left: -60px;
+    left: 0px;
     border-radius: 10px;
     width: 500px;
     max-width: 100%;
-    height: 40px;
+    height: 50px;
     color: var(--clr-orange);
     background-color: var(--clr-dark);
     border: none;
@@ -123,15 +126,14 @@ input {
 
 input::placeholder {
     color: white;
-    font-size: 18px;
+    font-size: 28px;
 }
 
 #li2 {
     position: relative;
-    top: 35px;
-    left: -45em;
+    top: -20px;
+    left: -460px;
 }
-
 #RecipeList {
     background-color:black;
     display: none;
@@ -139,8 +141,8 @@ input::placeholder {
     margin: 0px;
     padding-left: 100px;
     position: absolute;        
-    top: 88px;
-    right: 7    0px;
+    top: 120px;
+    right: 20px;
     width: 500px;
     min-height: auto;
     max-height: 300px;
@@ -283,39 +285,41 @@ input::placeholder {
 
 .instructionsList p{
     font-size: 25px;
-    width: 1832px;
+    width: 1795px;
 }
 
 hr{
-    position: relative;
-    top: 12em;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 1832px;
+    width: 1795px;
+    position: relative;
+    top: 12em;
 }
 
-.note{ position: relative;
+.note{
+    position: relative;
     top: 6em;
     font-size: 32px;
-    width: 1832px;
+    width: 1795px;
     margin-bottom: 50px;
 }
 
 .singleServing{
-    position: relative;
-    top: 6.5em;
     font-size: 25px;
     margin-bottom: 50px;
+    position: relative;
+    top: 7em;
 }
 
 .note1{
     font-size: 32px;
     position: relative;
-    top: 4.5em;
+    top: 5em;
 }
 
 .suggestionList{
     position: relative;
+    top: 3em;
     margin-top: 180px;
 }
 
@@ -327,18 +331,21 @@ hr{
     font-size: 52px;
     width: 300px;
 }
-#hr1{
-    position: relative;
-    top: 15px;
-}
-#hr2{
-    position: absolute;
-    top: 25em;
-}
+
 .hoverRecipe{
     height: 500px;
     width: 500px;
     border-radius: 50%;
+}
+
+#hr1{
+    position: relative;
+    top: 15px;
+}
+
+#hr2{
+    position: absolute;
+    top: 25em;
 }
 
 #bakedChickenThighs{
@@ -578,7 +585,7 @@ hr{
             <h1>Instructions</h1>
             <p>1. In a small bowl, whisk together all marinade ingredients: 3/4 cup honey, 1/2 cup soy sauce, 1/4 cup orange juice, 2 Tbsp dijon mustard, 4 grated garlic cloves and 1 Tbsp grated ginger. Reserve 2/3 cup of marinade and refrigerate.</p>
             <p>2. Place drumsticks in a large ziploc bag or food saver bag, pour remaining marinade over chicken, remove as much air from the bag as you can and seal. Refrigerate 6 hours or overnight, turning the bag a few times while marinating to disperse the marinade for best flavor.</p>
-            <p>3. Preheat oven to 400˚F. Place rack in center of oven. Line a rimmed baking sheet or large roasting pan with parchment***,</p>
+            <p>3. Preheat oven to 400˚F. Place rack in center of oven. Line a rimmed baking sheet or large roasting pan with parchment</p>
             <p>4. Arrange chicken skin-side up, so chicken pieces are not touching. Add enough of the marinade to just coat the bottom of the baking pan and discard anything left in the bag. Bake at 400˚F for 25 minutes. Turn chicken over skin-side down and bake additional 20 minutes. If you want your chicken skin caramelized at the end, remove drumsticks from the oven and turn them over again (skin-side-up), and broil on high for 3-4 minutes or until skins are browned.</p>
             <p>5. While chicken is baking, pour reserved 2/3 cup marinade into a small saucepan. Bring to a boil then reduce heat and simmer 7 minutes or until thickened and syrupy. Remove from heat and brush over baked chicken drumsticks. Garnish with sesame seeds and chives.</p>
         </div>
